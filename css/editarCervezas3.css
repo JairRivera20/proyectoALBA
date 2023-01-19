@@ -1,0 +1,177 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ----------------------Contenido sobre el crud----------------------------------- */
+
+/* card del formulario */
+.form{
+    width: 600px;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    top: 50px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 90px;
+}
+
+/* color y tamaño de la letra del menu */
+.form h4{
+    margin: 0;
+    padding: 0 0 15px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding: 0 0 30px 0;
+}
+
+/* ajustes de los label y input del formulario */
+.form label{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+}
+
+.form input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form select{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+}
+
+/* color del fondo de las options */
+.form option{
+    background: dimgrey;
+}
+
+/* ajustes de algunos tipos de input */
+.form input[type="text"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.form input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #00B400;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover{
+    transform: scale(1.10);
+}
+
+/* --------------------------listado de eventos--------------------------- */
+
+/* card del listado de los eventos */
+.tabla{
+    width: max-content;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ajustes que se le dan a la tabla */
+.tabla table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+/* color y tamaño de la letra del tabla */
+.tabla h4{
+    margin: 0;
+    padding: 0 0 30px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+/* ajustes de la tabla */
+.tabla thead{
+    background: #39A900;
+}
+
+.tabla th{
+    padding: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tabla td{
+    margin: 200px;
+    padding: 15px;
+}
+
+/* ajustes del tamaño y color de los iconos que llevan en la tabla */
+.tabla i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/* ----------------------apartado del responsive----------------------- */
+
+@media screen and (max-width: 760px) {
+ 
+    /* card del formulario */
+    .form{
+        margin-top: 30px;
+        max-width: 90%;
+    }
+
+    /* color y tamaño de la letra del menu */
+    .form h4{
+        font-size: 25px;
+    }
+    
+    .table-responsive{
+        overflow-x: scroll;
+    }
+    
+    
+}

@@ -1,0 +1,104 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* fondo de la pagina */
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-oleksandr-pidvalnyi-1009068.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ajustes de la card que lleva el contenido de la informacion */
+.container{
+    width: 400px;
+    background: rgba(119, 117, 86, 0.445);
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 60px 30px;
+}
+
+/* estilo de los texto con informacion */
+.container h4{
+    margin: 0;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* ajustes de los input */
+.container input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* estilo que se le da al voton de participar */
+.container input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* efecto de aumento de tamaño del boton */
+.container input[type="submit"]:hover{
+    transform: scale(1.10);
+}
+
+
+/* esto es el apartado html dentro de php pero que se llama la clase para darle el css */
+.noCervezas{
+    color: white;
+    margin-top: 20%;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+
+/*-------------- apartado del responsive ------------------*/
+
+@media screen and (max-width: 760px){
+
+    .container{
+        max-width: 75%;
+        top: 45%;
+    }
+    
+    /* estilo de los texto con informacion */
+    .container h4{
+        font-size: 17px;
+    }
+
+    /* card de donde de escuentran los mensajes que estan dentro de php */
+    .noCervezas{
+        max-width: 90%;
+        margin: auto;
+        margin-top: 60%;
+        font-size: 25px;
+    }
+    
+}

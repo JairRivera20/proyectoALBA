@@ -1,0 +1,81 @@
+/* Para quitar el scroll de la pagina */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ----------------------Contenido del panel de notificaciones----------------------------------- */
+
+/* card de las notificaciones */
+.container{
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    top: 100px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+}
+
+h4{
+    color: white;
+}
+
+table th{
+    color: white;
+}
+
+table td{
+    color: white;
+}
+
+
+/* efecto que se le da al boton de regresar */
+
+.boton button{
+    width: 100px;
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.boton button:hover{
+    transform: scale(1.10);
+}
+
+
+/*-------------- apartado del responsive ------------------*/
+
+@media screen and (max-width: 760px){
+
+    .container{
+        max-width: 95%;
+    }
+
+    
+}

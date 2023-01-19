@@ -1,0 +1,89 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-craig-adderley-1557686.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* donde va todo el contenido dentro de una card */
+.container{
+    width: 400px;
+    background: rgba(119, 117, 86, 0.445);
+    top: 40%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 60px 30px;
+}
+
+/* el titulo de la card */
+.container .header{
+    margin: 0;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* el contenido que va aparecer cuando haga click en el boton */
+.container .puestos{
+    margin: 0;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* estilo que se le da al boton de click aqui de ultimo evento */
+.container button{
+    width: 100%;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: white;
+}
+
+/* efecto del los botones cuando pasa el cursor estos se agranden */
+.container button:hover{
+    transform: scale(1.10);
+}
+
+
+/*-------------- apartado del responsive ------------------*/
+
+@media screen and (max-width: 760px){
+
+    .container{
+        max-width: 75%;
+    }
+
+    /* estilo que se le da al boton de click aqui de ultimo evento */
+    .container button{
+        font-size: 15px;
+    }
+    
+    
+}

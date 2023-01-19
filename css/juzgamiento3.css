@@ -1,0 +1,244 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-craig-adderley-1557686.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ----------------------Contenido sobre el crud----------------------------------- */
+
+/* titulo */
+.titulo{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+/* el contenedor padre */
+.container{
+    margin: auto;
+    width: 600px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* contenedor donde se encuentran los card de cada formulario */
+.container .grande {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ajustes de los titulos de la informacion de la cerveza a juzgar */
+.grande .textos h2{
+    text-align: left;
+    color: #39A900;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* el input de los datos de la cerveza a juzgar */
+.grande .textos input[type="text"]{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    text-align: left;
+    font-size: 16px;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+/* para poder cada cards de fomrulario que sea display flex */
+.grande .form{
+    display: flex;
+    width: 500%;
+    transition: 0.3s ease-in-out;
+}
+
+/* para que los nombre de "alto" y "bajo" queden a las orillas del input type rango */
+.grande span{
+    display: flex;
+    align-items: center;
+}
+
+/* ajustes de los input */
+.grande input{
+    width: 100%;
+    margin: 10px;
+    color: #fff;
+}
+
+/* color a los placehoder */
+::placeholder {
+    color: white;
+}
+
+/* ajustes de los diferentes titulos que hay en cada card */
+.grande h4{
+    margin: 15px 0;
+    margin-left: 0;
+    color: white;
+    font-size: 30px;
+}
+
+.grande h5{
+    margin: 15px 0;
+    margin-left: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.grande h6{
+    margin: 15px 0;
+    margin-left: 0;
+    color: white;
+    font-size: 15px;
+}
+
+/* ajustes especificos de algunos input */
+.grande input[type="text"],
+.grande input[type="number"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    -moz-appearance: textfield;
+}
+
+/* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+.grande input[type="number"]::-webkit-outer-spin-button,
+.grande input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+.grande input[type=range]{
+    cursor: pointer;
+}
+
+/* ajustes del boton registrar */
+.grande button{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* ajustes que se le a cada cards del formulario */
+.grande .aroma{
+    margin: 25px 0;
+    padding: 90px 60px 0 60px;
+    background: rgba(119, 117, 86, 0.712);
+    border-radius: 30px;
+    width: 25%;
+}
+
+.grande .apariencia{
+    margin: 25px 0;
+    padding: 60px;
+    background: rgba(119, 117, 86, 0.712);
+    border-radius: 30px;
+    width: 25%;
+}
+
+.grande .sabor{
+    margin: 25px 0;
+    padding: 60px;
+    background: rgba(119, 117, 86, 0.712);
+    border-radius: 30px;
+    width: 25%;
+}
+
+.grande .sensacion{
+    margin: 25px 0;
+    padding: 150px 60px 0 60px;
+    background: rgba(119, 117, 86, 0.712);
+    border-radius: 30px;
+    width: 25%;
+}
+
+.grande .general{
+    margin: 25px 0;
+    padding: 200px 60px 0 60px;
+    background: rgba(119, 117, 86, 0.712);
+    border-radius: 30px;
+    width: 25%;
+}
+
+.grande .general span{
+    margin: 30px 0;
+    width: 100%;
+}
+
+/* ajustes que se le da a los botones */
+.grande button{
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.grande button:hover{
+    transform: scale(1.10);
+}
+
+.grande .ba{
+    margin: 20px 0;
+}
+
+.grande .bs{
+    margin: 20px 0;
+}
+
+.botones #b1{
+    margin-top: 15%;
+}
+
+.grande #b2{
+    margin-top: 15%;
+    
+}
+
+/* esto es el apartado html dentro de php pero que se llama la clase para darle el css */
+.noCervezas{
+    color: white;
+    margin-top: 20%;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+/* -------------------este es el apartado de responsive---------------- */
+
+@media screen and (max-width: 760px){
+
+    /* card de donde de escuentran los mensajes que estan dentro de php */
+    .noCervezas{
+        max-width: 90%;
+        margin: auto;
+        margin-top: 80%;
+        font-size: 20px;
+    }
+    
+}
+

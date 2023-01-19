@@ -1,0 +1,229 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* ----------------------Contenido sobre el crud----------------------------------- */
+
+/* card del formulario */
+.formulario{
+    width: 600px;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    top: 50px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 90px;
+}
+
+/* color y tamaño de la letra del formulario */
+.formulario h3{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding: 0 0 30px 0;
+}
+
+.formulario h4{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 0 10px 0;
+}
+
+/* formulario para agregar otra mesa */
+.mesas{
+    width: 400px;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    top: 50px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+.mesas h3{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 0 10px 0;
+}
+
+/* estilo del boton de agregar mesa */
+.mesas button{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.mesas button:hover{
+    transform: scale(1.10);
+}
+
+/* ajustes de los input */
+::placeholder{
+    color: white;
+}
+
+.formulario input[type="number"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    -moz-appearance: textfield;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+.formulario input[type="number"]::-webkit-outer-spin-button,
+.formulario input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+/* estilo de los select */
+.formulario select{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+}
+
+/* color del fondo de las options */
+.formulario option{
+    background: dimgrey;
+}
+
+/* estilo del boton de registrar */
+.formulario button{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.formulario button:hover{
+    transform: scale(1.10);
+}
+
+/* --------------------------listado de eventos--------------------------- */
+
+/* card del listado de los eventos */
+.tabla{
+    width: max-content;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ajustes que se le dan a la tabla */
+.tabla table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+/* color y tamaño de la letra del tabla */
+.tabla h3{
+    margin: 0;
+    padding: 0 0 30px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+/* ajustes de la tabla */
+.tabla thead{
+    background: #39A900;
+}
+
+.tabla th{
+    padding: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tabla td{
+    margin: 200px;
+    padding: 15px;
+}
+
+/* ajustes del tamaño y color de los iconos que llevan en la tabla */
+.tabla i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+/* ----------------------apartado del responsive----------------------- */
+
+@media screen and (max-width: 760px) {
+ 
+
+    /* card del formulario */
+    .formulario{
+        margin-top: 30px;
+        max-width: 90%;
+    }
+
+    /* color y tamaño de la letra del formulario */
+    .formulario h3{
+        font-size: 25px;
+    }
+    
+    .table-responsive{
+        overflow-x: scroll;
+    }
+    
+}

@@ -1,0 +1,111 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Fondo de la pagina */
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 238, 0, 0.199), rgba(24, 26, 2, 0.2883)), url("https://www.alfa-editores.com.mx/wp-content/uploads/2020/08/NOTICIA-5-cerveza-musical-e1597379703981.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* contenedor del formulario de verificación */
+.container{
+    width: 500px;
+    background: rgba(119, 117, 86, 0.445);
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 60px 30px;
+}
+
+/* titulo del formulario */
+.container h2{
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+/* subtitulo del forulario */
+.container label{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+}
+
+/* ajustes de los input en general */
+.container input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* ajustes de cada uno de los input dependiendo del type */
+.container input[type="number"]{
+    border: none;
+    border: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    /* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+    -moz-appearance: textfield;
+}
+
+/* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+.container input[type="number"]::-webkit-outer-spin-button,
+.container input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+/* ajustes de cada uno de los input dependiendo del type */
+.container input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+/* efecto de aumento de tamaño del boton */
+.container input[type="submit"]:hover{
+    transform: scale(1.10);
+}
+
+
+
+/* -------------------este es el apartado de responsive---------------- */
+
+@media screen and (max-width: 760px){
+
+    /* card del formulario */
+    .container{
+        top: 40%;
+        max-width: 95%;
+    }
+
+    /* titulo del formulario */
+    .container h2{
+        font-size: 30px;
+    }
+    
+}

@@ -1,0 +1,120 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Fondo de la pagina */
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-anton-belitskiy-4779182.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* contenedor del formulario de verificación */
+.container{
+    width: 450px; 
+    background: rgba(119, 117, 86, 0.418);
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 60px 30px;
+}
+
+/* titulo del formulario */
+.container h2{
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+/* subtitulo del forulario */
+.container label{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+}
+
+/* ajustes de los input en general */
+.container input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* ajustes de cada uno de los input dependiendo del type */
+.container input[type="email"],
+.container input[type="text"]{
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* ajustes de cada uno de los input dependiendo del type */
+.container input[type="submit"],
+.container input[type="button"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    transition: all 300ms;
+}
+
+/* efecto de aumento de tamaño del boton */
+.container input[type="submit"]:hover,
+.container input[type="button"]:hover{
+    transform: scale(1.10);
+}
+
+
+
+/* -------------------este es el apartado de responsive---------------- */
+
+@media screen and (max-width: 760px){
+
+    /* contenedor del formulario de verificación */
+    .container{
+        max-width: 95%;
+    }
+
+
+    /* titulo del formulario */
+    .container h2{
+        font-size: 25px;
+    }
+    
+}
+
+
+
+/* -------------------este es el apartado de responsive horizontalmente---------------- */
+
+@media screen and (max-height: 430px){
+
+    /* contenedor del formulario de verificación */
+    .container{
+        top: 80%;
+    }
+    
+}

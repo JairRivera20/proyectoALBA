@@ -1,0 +1,45 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-oleksandr-pidvalnyi-1009068.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* esto es el apartado html dentro de php pero que se llama la clase para darle el css */
+.noCervezas{
+    color: white;
+    margin-top: 20%;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+
+/* -------------------este es el apartado de responsive---------------- */
+
+@media screen and (max-width: 760px){
+
+    /* card de donde de escuentran los mensajes que estan dentro de php */
+    .noCervezas{
+        max-width: 90%;
+        margin: auto;
+        margin-top: 60%;
+        font-size: 25px;
+    }
+    
+}

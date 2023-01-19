@@ -1,0 +1,94 @@
+/* Para quitar el scroll de la pagina */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* fondo de la pagina y ajustes del body*/
+body{
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-cottonbro-studio-5537951.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* --------------------------listado del juzgamiento--------------------------- */
+
+/* card del listado de los eventos */
+.tabla{
+    width: 1300px;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* ajustes que se le dan a la tabla */
+.tabla table{
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+/* color y tamaño de la letra del formulario */
+.tabla h4{
+    margin: 0;
+    padding: 0 0 30px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+/* ajustes de la tabla */
+.tabla thead{
+    text-align: center;
+    background: #39A900;
+}
+
+.tabla td{
+    margin: 200px;
+    padding: 15px;
+}
+
+/* ajustes del tamaño y color de los iconos que llevan en la tabla */
+.tabla i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Ajustes que se le da a los botones de estadisticas y regresar en la interfaz de aceptar en interfaces del admin */
+.tabla .botones{
+    display: flex;
+    align-items: center;
+}
+
+.tabla .boton2{
+    margin-left: 82%;
+}
+
+
+
+/*-------------- apartado del responsive ------------------*/
+
+@media screen and (max-width: 760px){
+
+    .res{
+        overflow-x: scroll;
+    }
+    
+    
+}

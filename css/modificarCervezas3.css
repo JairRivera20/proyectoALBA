@@ -1,0 +1,129 @@
+/* estos es pra llamar el tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Fondo de la pagina */
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* card del login */
+.container{
+    width: 500px;
+    background: rgba(119, 117, 86, 0.445);
+    top: 50px;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 70px 30px;
+}
+
+/* color y tamaño de la letra del menu */
+.container h4{
+    margin: 0;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.container label{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+}
+
+/* ajustes de los input */
+.container input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container select{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+}
+
+/* color del fondo de las options */
+.container option{
+    background: dimgrey;
+}
+
+/* ajustes de algunos tipos de input */
+.container input[type="text"],
+.container input[type="number"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.container input[type="button"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.container button{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+/* efecto de aumento de tamaño del boton */
+.container input[type="button"]:hover{
+    transform: scale(1.10);
+}
+
+.container button:hover{
+    transform: scale(1.10);
+}
+
+
+/*-------------- apartado del responsive ------------------*/
+
+@media screen and (max-width: 760px){
+
+    .container{
+        width: 330px;
+    }
+    
+    
+}
