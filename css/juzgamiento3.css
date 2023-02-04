@@ -1,6 +1,12 @@
 /* estos es pra llamar el tipo de fuente */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
 
+/* Para quitar el scroll de la pagina */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +16,7 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-craig-adderley-1557686.jpg");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-craig-adderley-1557686-min.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,16 +33,17 @@ body{
 }
 
 /* el contenedor padre */
-.container{
+/* .container{
     margin: auto;
     width: 600px;
     border-radius: 20px;
     text-align: center;
-}
+} */
 
 /* contenedor donde se encuentran los card de cada formulario */
 .container .grande {
-    width: 100%;
+    margin: 0 auto;
+    width: 600px;
     overflow: hidden;
 }
 
@@ -171,7 +178,7 @@ body{
 
 .grande .sensacion{
     margin: 25px 0;
-    padding: 150px 60px 0 60px;
+    padding: 130px 60px 0 60px;
     background: rgba(119, 117, 86, 0.712);
     border-radius: 30px;
     width: 25%;
@@ -209,7 +216,8 @@ body{
 }
 
 .botones #b1{
-    margin-top: 15%;
+    margin-top: 6%;
+    margin-bottom: 10%;
 }
 
 .grande #b2{
@@ -231,6 +239,16 @@ body{
 /* -------------------este es el apartado de responsive---------------- */
 
 @media screen and (max-width: 760px){
+
+
+    /* contenedor donde se encuentran los card de cada formulario */
+    .container .grande {
+        max-width: 100%;
+    }
+
+    .txtEstilos button{
+        font-size: 14px;
+    }
 
     /* card de donde de escuentran los mensajes que estan dentro de php */
     .noCervezas{

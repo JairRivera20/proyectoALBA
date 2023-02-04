@@ -8,12 +8,11 @@ $hash=password_hash($contrasena, PASSWORD_DEFAULT,  ['cost'=>10]);
 
 if (!empty($_POST["recuperar"])) {
     
-    if (!empty($_POST["correo"]) and !empty($_POST["nombre"])) {
+    if (!empty($_POST["correo"])) {
 
         $correo=$_POST["correo"];
-        $nombre=$_POST["nombre"];
 
-        $sql=$conexion->query(" SELECT * FROM usuarios WHERE Correo = '$correo' AND Nombre = '$nombre' ");
+        $sql=$conexion->query(" SELECT * FROM usuarios WHERE Correo = '$correo'");
 
         if (mysqli_num_rows($sql) > 0) {
             
@@ -24,7 +23,7 @@ if (!empty($_POST["recuperar"])) {
             echo '<div class="verificado">
             <script language="javascript">
             
-            alert("¡Todo salio bien! \nRevisa tu correo");
+            alert("¡Todo salio bien! \nRevise su correo");
             history.pushState(null, null, window.location.href);
             window.location.href="../login/login.php";
 

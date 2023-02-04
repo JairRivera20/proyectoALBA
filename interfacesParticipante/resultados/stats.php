@@ -26,7 +26,7 @@ $sql=$conexion->query("SELECT * FROM general WHERE Id=$ID");
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <!-- Include boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/estadisticas2.css">
+
     <link rel="stylesheet" href="../../css/estadisticas2.css">
     <link rel="icon" href="../../img/Logo.png">
   </head>

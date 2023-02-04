@@ -2,12 +2,12 @@
 <div class="modal fade" id="deleteChildresn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div style="background: rgba(119, 117, 86, 0.445);" class="modal-header">
+      <div style="background: rgba(65, 64, 59, 0.445);" class="modal-header">
             <h4 class="modal-title" style="text-align: center; color:white;">
               <?=$data->Nombre?> || Ver juzgamientos de la Cerveza
             </h4>
       </div>
-      <div style="background: rgba(119, 117, 86, 0.445);" class="modal-body">
+      <div style="background: rgba(65, 64, 59, 0.445);" class="modal-body">
       
         <?php
        /*  cerveza.Nombre AS Cerveza,cerveza.Codigo, usuarios.Nombre AS Usuario, rango_competidor.Nombre AS Rango  */
@@ -21,7 +21,7 @@
                 <input type="hidden" name="eventos" value="<?=$data->Id_evento?>">
               </div>
               <div class="modal-body">
-                <button type="submit" style="background: rgba(255, 208, 0, 0.76); border:yellow" class="btn btn-primary"><?php echo $altdataCliente['Categoria']," - ",$altdataCliente['Estilo']," - ",$altdataCliente['Cerveza']; ?></button>
+                <button type="submit" style="background: #39A900; border:yellow" class="btn btn-primary"><?php echo $altdataCliente['Categoria']," - ",$altdataCliente['Estilo']," - ",$altdataCliente['Cerveza']; ?></button>
               </div>
               </form>
           <?php } ?>

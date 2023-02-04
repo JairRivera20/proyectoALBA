@@ -11,7 +11,7 @@ $cuantas = mysqli_num_rows($sql);
 ?>
 
 
-<link rel="stylesheet" href="http://localhost/proyectoalba/css/menuDesplegable3.css">
+
 <link rel="stylesheet" href="../css/menuDesplegable3.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
@@ -40,7 +40,22 @@ $cuantas = mysqli_num_rows($sql);
             <!-- icono y perfil -->
             <div class="icono_nombre_perfil">
                 
-                <i class="bi bi-person-circle"></i>
+				
+            <?php 
+
+            if ($_SESSION["Foto"] != "") {
+
+                echo '<img class="fotoPerfil" src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto">';
+                
+            } else {
+
+                echo '<i class="bi bi-person-circle"></i>';
+                
+            }
+            
+            ?>
+				
+				
                 <h4><?php echo$_SESSION["Nombre"]." ".$_SESSION["Apellido"]; ?></h4>
 
                 <!-- icono del lapiz editar -->
@@ -79,7 +94,7 @@ $cuantas = mysqli_num_rows($sql);
                 <a href="notificaciones/index.php">
                     <div class="option">
                     <span class="bi bi-bell" title="Notificaciones"></span>
-                    <span class="bi bi-exclamation" style="color:gold;"></span>
+                    <span class="bi bi-exclamation" style="color:gold; margin-left: 1px; font-size: 25px;"></span>
                     <h4>Notificaciones</h4>
                     </div>
                 </a>
@@ -144,3 +159,6 @@ $cuantas = mysqli_num_rows($sql);
     <!-- llamado del archivo js para la animacion del boton del menu -->
     <script src="../js/menuDespegable2.js"></script>
 
+	
+	<!-- es para quitar la funcionalidad de la tecla "Tab" -->
+    <script src="../js/quitarTab.js"></script>

@@ -2,12 +2,12 @@
 <div class="modal fade" id="editChildresn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div style="background: rgba(119, 117, 86, 0.445);" class="modal-header">
-            <h4 class="modal-title">
+      <div style="background: rgba(65, 64, 59, 0.445);" class="modal-header">
+            <h4 class="modal-title" style="color:white;">
                 Estadística por Categoría
             </h4>
       </div>
-      <div style="background: rgba(119, 117, 86, 0.445);" class="modal-body">
+      <div style="background: rgba(65, 64, 59, 0.445);" class="modal-body">
       
         <?php 
             while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>

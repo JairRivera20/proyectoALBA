@@ -30,7 +30,7 @@ if ($datos!=null) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/inicioParticipante4.css">
+
     <link rel="stylesheet" href="../css/inicioParticipante4.css">
     <link rel="icon" href="../img/Logo.png">
 </head>
@@ -57,7 +57,6 @@ if ($datos!=null) {
                 ?>
                 <br>
                 <div class="padre">
-                    <br><br><br>
                     <div class="container">
 
                         <h4>El evento <?=$data->Nombre?> ha terminado</h4>
@@ -68,7 +67,7 @@ if ($datos!=null) {
                                     <input type="hidden" value="ok" name="update">
                                     <button type="submit" name="btnUpdate" value="ok" style="color:white;">Ver podio <?=$data->Nombre?></button>
                                 </form>
-                            </div>
+                        </div>
                         
                         <?php include "podio/fork.php";?>
                         

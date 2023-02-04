@@ -18,13 +18,13 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'jairrivera274@gmail.com';                     //SMTP username
-    $mail->Password   = 'damuvfbebnpilqts';                               //SMTP password
+    $mail->Username   = 'albasena343@gmail.com';                     //SMTP username
+    $mail->Password   = 'ldskowddlllymvgy';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('jairrivera274@gmail.com', 'ALBA');
+    $mail->setFrom('albasena343@gmail.com', 'ALBA');
     $mail->addAddress($correo);     //Add a recipient
 
 
@@ -59,7 +59,7 @@ try {
                 <br>
                 <h2> '.$codigo.' </h2>
                 <br>
-                <button style="background-color: gold;
+                <button style="background-color: #39A900;
                         font-size: 20px;
                         width: 200px;
                         padding: 20px;
@@ -88,10 +88,11 @@ try {
 
 /*     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
  */
-    $enviado = false;
-
+ 
+	$enviado = false;
+ 
     $mail->send();
-    $enviado = true;
+	$enviado = true;
 
 } catch (Exception $e) {
 

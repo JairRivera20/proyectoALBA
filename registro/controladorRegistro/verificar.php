@@ -16,7 +16,7 @@ if (!empty($_POST["verificar"])) {
             echo '<div class="verificado">
             <script language="javascript">
             
-            alert("Todo correcto");
+            alert("Verificación correcta");
             history.pushState(null, null, window.location.href);
             window.location.href="../../login/login.php";
 

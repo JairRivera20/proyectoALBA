@@ -32,11 +32,11 @@ if ($datos!=null) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cervezas</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/cervezas1.css">
+
     <link rel="stylesheet" href="../css/cervezas1.css">
     <link rel="icon" href="../img/Logo.png">
 </head>
-    <?php include("menuParticipante.php"); ?>+
+    <?php include("menuParticipante.php"); ?>
     <div>
         <?php
         if ($ok==1) {
@@ -48,7 +48,8 @@ if ($datos!=null) {
             
             while ($alt=$sql->fetch_object()) {
                 ?>
-                <div>
+			<div class="table-responsive">	
+                <div class="container">
                     <table>
                         <thead>
                             <tr>
@@ -76,6 +77,7 @@ if ($datos!=null) {
                         </tbody>
                     </table>
                 </div>
+			</div>
                 <?php
             }
             
