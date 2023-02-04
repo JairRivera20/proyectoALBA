@@ -19,7 +19,6 @@ if (empty($_SESSION["Id_usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evento</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/eventoAdmin2.css">
     <link rel="stylesheet" href="../css/eventoAdmin2.css">
     <link rel="icon" href="../img/Logo.png">
     <!-- llamado de los iconos -->
@@ -57,17 +56,17 @@ if (empty($_SESSION["Id_usuario"])) {
 
                 <div class="nombre_evento">
                     <label>Nombre del evento</label>
-                    <input type="text" name="nombreEvento">
+                    <input type="text" name="nombreEvento"  onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('fecha').focus(); }">
                 </div>
 
                 <div class="fecha">
                     <label>Fecha</label>
-                    <input type="date" name="fecha">
+                    <input type="date" id="fecha" name="fecha" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('lugar').focus(); }">
                 </div>
 
                 <div class="lugar">
                     <label>Lugar</label>
-                    <input type="text" name="lugar">
+                    <input type="text" id="lugar" name="lugar">
                 </div>
 
                 <input type="submit" name="agregarEvento" value="Agregar">

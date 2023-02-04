@@ -24,6 +24,8 @@ if (!empty($_POST["ingresar"])) {
                 $_SESSION["Nombre"]=$datos->Nombre;
                 $_SESSION["Apellido"]=$datos->Apellido; 
                 $_SESSION["Rol"]=$datos->Rol;
+				$_SESSION["Foto"]=$datos->Foto;
+				
                         
                     if (isset($_SESSION['Rol'])) {
                         

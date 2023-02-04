@@ -10,7 +10,7 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-oleksandr-pidvalnyi-1009068.jpg");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-oleksandr-pidvalnyi-1009068-min.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,13 +22,12 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
-    top: 30%;
+    top: 20%;
 }
 
-/* contenedor donde muestra para participar el el ultimo evento */
+/* contenedor se muentras el contenido */
 .padre .container{
-    width: 400px;
-    height: 250px;
+    width: 500px;
     background: rgba(119, 117, 86, 0.445);
     margin-left: 5%;
     margin-right: 50px;
@@ -36,7 +35,7 @@ body{
     padding: 60px 30px;
 }
 
-/* el titulo de la card de participar en el ultimo evento */
+/* el titulo de la card */
 .padre .container h4{
     margin: 0;
     padding: 0 0 20px 0;
@@ -45,26 +44,7 @@ body{
     font-size: 20px;
 }
 
-/* segunda card donde se muestra los 3 primeros puestos que ganaron el ultimo evento */
-.padre .container2{
-    width: 400px;
-    background: rgba(119, 117, 86, 0.445);
-    margin-left: 10%;
-    margin-right: 50px;
-    border-radius: 10px;
-    padding: 60px 30px;
-}
-
-/* el contenido que va aparecer cuando haga click en el boton de lo que ganaron en el ultimo evento */
-.padre .container2 .puestos{
-    margin: 0;
-    padding: 0 0 20px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-}
-
-/* estilo que se le da al boton de "click aqui" de ultimo evento */
+/* estilo que se le da al boton */
 .padre .container button{
     width: 100%;
     margin-bottom: 20px;
@@ -81,23 +61,8 @@ body{
     margin-bottom: 0;
 }
 
-/* estilo que se le da a la letra del boton "click aqui" */
+/* estilo que se le da a la letra del boton "ver ultimo evento" */
 .padre .container a{
-    color: white;
-}
-
-/* estilo que se le da al boton de la segunda card de los ganadores */
-.padre .container2 button{
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #39A900;
-    font-size: 18px;
-    border-radius: 20px;
-    transition: all 300ms;
-    cursor: pointer;
-    margin-top: 15%;
     color: white;
 }
 
@@ -106,33 +71,33 @@ button:hover{
     transform: scale(1.10);
 }
 
+/* esto se le da a la hora de ver los puestos ganadores que se encuentra el control en fork.php */
+.container .puestos{
+    margin: 0;
+    padding: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
 
 /*-------------- apartado del responsive ------------------*/
 
 @media screen and (max-width: 760px){
 
-
-    /* donde va el contenido de todo */
-    .padre{
-        display: block;
-        margin-top: -250px;
+    /* el titulo de la card */
+    .padre .container h4{
+        font-size: 18px;
     }
 
     .padre .container{
         max-width: 75%;
-        height: 300px;
-        margin: auto;
-    }
-    
-    /* segunda card donde se muestra los 3 primeros puestos que ganaron el ultimo evento */
-    .padre .container2{
-        max-width: 75%;
         margin: auto;
     }
 
-    /* estilo que se le da al boton de la segunda card de los ganadores */
-    .padre .container2 button{
-        font-size: 15px;
+    /* estilo que se le da al boton */
+    .padre .container button{
+        font-size: 13px;
     }
     
 }

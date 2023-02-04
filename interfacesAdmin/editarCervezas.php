@@ -27,7 +27,10 @@ mysqli_close($conexion);
 include "../config/conexion.php";
 
 /* obtenemos los datos de usuario */
-$sql_2 = "SELECT * FROM usuarios";
+$sql_2 = "SELECT usuarios.Id_usuario, usuarios.Nombre, rango_competidor.Nombre AS Rango 
+FROM usuarios 
+INNER JOIN rango_competidor ON rango_competidor.Id_rango_competidor=usuarios.fk_rango_competidor
+WHERE Rol != 1 AND Rol !=2";
 $query_2 = mysqli_query($conexion, $sql_2);
 $filas_2 = mysqli_fetch_all($query_2, MYSQLI_ASSOC); 
 mysqli_close($conexion);
@@ -41,7 +44,7 @@ mysqli_close($conexion);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cervezas</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/editarCervezas3.css">
+
     <link rel="stylesheet" href="../css/editarCervezas3.css">
     <link rel="icon" href="../img/Logo.png">
     <!-- llamada de iconos -->
@@ -144,7 +147,7 @@ mysqli_close($conexion);
                     <select id="usuario" name="usuario" type="number" class="form-control">
                         <option value="" selected disabled> Seleccione usuario </option>
                         <?php foreach ($filas_2 as $op_2): //llenar las opciones del select usuario ?>
-                        <option value="<?= $op_2['Id_usuario'] ?>"><?= $op_2['Nombre'] ?></option>  
+                        <option value="<?= $op_2['Id_usuario'] ?>"><?= $op_2['Nombre']." - ".$op_2['Rango']?></option>  
                         <?php endforeach; ?>
                     </select>                
                 </div>
@@ -207,7 +210,7 @@ mysqli_close($conexion);
                         INNER JOIN categorias ON categorias.Id_categoria=estilos.fk_categoria AND estilos.Id_estilo = cerveza.fk_estilo
                         INNER JOIN evento_usuarios ON usuarios.Id_usuario=evento_usuarios.fk_usuarios
                         INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
-                        WHERE evento_usuarios.fk_evento=$i+1");
+                        WHERE evento_usuarios.fk_evento=$i+1 AND usuarios.Rol!=1");
                         /* se crea un while para listar los datos y se repite la la cantidad de filas de la tabla*/
                         while($datos=$sql->fetch_object()){ 
                         ?>

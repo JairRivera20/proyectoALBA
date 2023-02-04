@@ -10,7 +10,7 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.jpg");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.min.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,6 +75,7 @@ body{
 
 /* ajustes de algunos tipos de input */
 .form input[type="text"],
+.form input[type="password"],
 .form input[type="number"],
 .form input[type="email"],
 .form input[type="tel"]{
@@ -86,6 +87,20 @@ body{
     font-size: 16px;
     color: #fff;
     -moz-appearance: textfield;
+}
+
+/* la position del div contraseña sea relativo para asi poder acomodar el ojo de contraseña */
+.form .contraseña{
+    position: relative;
+}
+
+/* ajustes del estilo que se le da al icono del ojo en la contraseña */
+.form i{
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    right: 3%;
 }
 
 /* para quitar las opciones de subir y bajar el valor del numero con las flechas */

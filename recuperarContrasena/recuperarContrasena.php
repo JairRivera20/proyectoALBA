@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar contraseña</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/recuperarContrasena3.css">
+
     <link rel="stylesheet" href="../css/recuperarContrasena3.css">
     <link rel="icon" href="../img/Logo.png">
 </head>
@@ -23,12 +23,9 @@
         <div>
 
         <form action="" method="POST">
-
-            <label for="">Nombre</label>
-            <input type="text" id="nombre" name="nombre">
             
             <label for="">Correo</label>
-            <input type="email" id="correo" name="correo">
+            <input type="email" id="correo" name="correo" required>
 
             <input type="submit" name="recuperar" value="Enviar">
             <input type="button" onclick="history.back()" value="Regresar">

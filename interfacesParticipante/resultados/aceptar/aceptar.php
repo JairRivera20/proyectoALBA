@@ -44,7 +44,7 @@ $datos=$sql->fetch_object()
     <!-- llamada de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
-  <link rel="stylesheet" href="http://localhost/proyectoalba/css/resultados3.css">
+
   <link rel="stylesheet" href="../../../css/resultados3.css">
   <link rel="icon" href="../../../img/Logo.png">
   <!-- CSS only -->

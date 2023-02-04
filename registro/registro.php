@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/registro2.css">
+    
     <link rel="stylesheet" href="../css/registro2.css">
     <link rel="icon" href="../img/Logo.png">
     <!-- llamado de los iconos -->
@@ -58,27 +58,27 @@
 
             <div class="DNI">
                 <label>DNI</label>
-                <input type="number" name="DNI">
+                <input type="number" name="DNI" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('nombre').focus(); }">
             </div>
 
             <div class="nombre">
                 <label>Nombre</label>
-                <input class="mayuscula" type="text" name="nombre">
+                <input class="mayuscula limite" type="text" name="nombre" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('apellido').focus(); }">
             </div>
 
             <div class="apellido">
                 <label>Apellido</label>
-                <input class="mayuscula" type="text" name="apellido">
+                <input class="mayuscula limite" type="text" name="apellido" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('telefono').focus(); }">
             </div>
 
             <div class="telefono">
                 <label>Teléfono</label>
-                <input type="tel" name="telefono">
+                <input type="tel" name="telefono" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('correo').focus(); }">
             </div>
 
             <div class="correo">
                 <label>Correo electronico</label>
-                <input type="email" name="correo">
+                <input type="email" name="correo" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('contraseña').focus(); }">
             </div>
 
             <div class="contraseña">
@@ -127,6 +127,9 @@
 		<!-- javascript para que al ingresar los datos estos comiecen con letra mayuscula -->
         <script src="../js/mayuscula2.js"></script>
 		
-    
+		
+		<!-- javascript para poner lmite de caracteres en algunos datos -->
+        <script src="../js/limite.js"></script>
+	
 </body>
 </html>

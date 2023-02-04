@@ -19,7 +19,6 @@ if (empty($_SESSION["Id_usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/inicioAdmin3.css">
     <link rel="stylesheet" href="../css/inicioAdmin3.css">
     <link rel="icon" href="../img/Logo.png">
 </head>
@@ -81,7 +80,7 @@ if (empty($_SESSION["Id_usuario"])) {
                                 <form method="POST">
                                     
                                     <input type="hidden" value="ok" name="terminar">
-                                    <button type="submit" name="btnTerminar" value="ok">4 Terminar <?=$datos->Nombre?></button>
+                                    <button type="submit" name="btnTerminar" value="ok">Terminar <?=$datos->Nombre?></button>
                                     
                                     <?php include "controladorEvento/terminar.php"; ?>
                                 </form>
@@ -100,7 +99,7 @@ if (empty($_SESSION["Id_usuario"])) {
                             <br>
                             <form method="POST">
                                 <input type="hidden" value="ok" name="terminar">
-                                <button type="submit" name="btnTerminar" value="ok">2 Terminar <?=$datos->Nombre?></button>
+                                <button type="submit" name="btnTerminar" value="ok">Terminar <?=$datos->Nombre?></button>
                             </form>
 
                             <?php
@@ -118,7 +117,7 @@ if (empty($_SESSION["Id_usuario"])) {
                             $sql=$conexion->query("SELECT * FROM evento WHERE Id_evento=$evento");
                             ?>
                             <div >
-                                <a href='podio.php'><button>1 Ver podio <?=$alt->Nombre?></button></a>
+                                <a href='podio.php'><button>Ver podio <?=$alt->Nombre?></button></a>
                             </div>
                             <?php
 

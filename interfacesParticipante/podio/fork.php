@@ -157,9 +157,8 @@ if (!empty($_POST["btnUpdate"])) {
     
                 <?php
             }else {
-                echo "<br>
-                <h2 style='color:white ;text-align:center;'>No hay registros suficientes</h2>
-                <br>
+                echo "<br><br>
+                <h3 style='color:white ;text-align:center;'>No hay registros suficientes</h3>
                 ";
             }
         }

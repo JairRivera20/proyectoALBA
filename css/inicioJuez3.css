@@ -10,7 +10,7 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-craig-adderley-1557686.jpg");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-craig-adderley-1557686-min.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,15 +28,6 @@ body{
     box-sizing: border-box;
     border-radius: 10px;
     padding: 60px 30px;
-}
-
-/* el titulo de la card */
-.container .header{
-    margin: 0;
-    padding: 0 0 20px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
 }
 
 /* el contenido que va aparecer cuando haga click en el boton */

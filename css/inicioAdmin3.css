@@ -10,7 +10,7 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/DSC_0104.JPG");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/DSC_0104-min.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

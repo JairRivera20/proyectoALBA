@@ -18,8 +18,8 @@ include "../config/conexion.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evento</title>
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/inicioAdmin2.css">
+    <title>Podio</title>
+
     <link rel="stylesheet" href="../css/inicioAdmin2.css">
     <link rel="icon" href="../img/Logo.png">
     <!-- llamado de los iconos -->

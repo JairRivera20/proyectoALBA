@@ -19,7 +19,7 @@ if (empty($_SESSION["Id_usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resultados</title>
 
-    <link rel="stylesheet" href="http://localhost/proyectoalba/css/resultados3.css">
+
     <link rel="stylesheet" href="../../css/resultados3.css">
     <link rel="icon" href="../../img/Logo.png">
     <!-- llamada de iconos -->
@@ -171,7 +171,7 @@ $cantidad     = mysqli_num_rows($queryCliente);
                 transform: scale(1.10);
             }
             </style>
-            <button type="button" onclick="history.back()" style="background: rgba(255, 208, 0, 0.76); border:yellow" class="btn btn-primary">Regresar</button>
+            <button type="button" onclick="history.back()">Regresar</button>
         </div>
 
     </div>

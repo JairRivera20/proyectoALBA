@@ -10,11 +10,51 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-oleksandr-pidvalnyi-1009068.jpg");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-oleksandr-pidvalnyi-1009068-min.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+
+/* --------------------------listado de la tabla--------------------------- */
+
+/* card del listado de los eventos */
+.container{
+    width: max-content;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    margin-top: 5%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ajustes que se le dan a la tabla */
+.container table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+
+/* ajustes de la tabla */
+.container thead{
+    background: #39A900;
+}
+
+.container th{
+    padding: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.container td{
+    margin: 200px;
+    padding: 15px;
 }
 
 
@@ -40,6 +80,15 @@ body{
         margin: auto;
         margin-top: 60%;
         font-size: 25px;
+    }
+
+    /* card del listado de los eventos */
+    .container{
+        margin: 100px 30px 20px 30px;
+    }
+
+    .table-responsive{
+        overflow-x: scroll;
     }
     
 }

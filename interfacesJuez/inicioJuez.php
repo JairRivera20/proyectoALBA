@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 if (empty($_SESSION["Id_usuario"])) {
     header("location: ../login/login.php");
@@ -17,7 +17,7 @@ if (empty($_SESSION["Id_usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="https://pruebas.migtutor.com/css/inicioJuez3.css">
+
     <link rel="stylesheet" href="../css/inicioJuez3.css">
     <link rel="icon" href="../img/Logo.png">
 </head>
@@ -108,8 +108,12 @@ if (empty($_SESSION["Id_usuario"])) {
                                 </form>
                             </div>
                         
-                        <?php include "./podio/fork.php";?>
-                    
+                            <?php include "./podio/fork.php";?>
+                                <div >
+                                    
+                                <a href="ultimoevento.php"><button>Ver ultimo evento disponible</button></a>
+                                
+                            </div>
                     
                     <?php
                 

@@ -2,7 +2,7 @@
 <!--ventana para Update--->
 <div class="modal fade" id="editChildresn<?php echo $dataCliente['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div style="background: rgb(202, 200, 168);" class="modal-content">
+    <div style="background: rgb(177, 175, 149);" class="modal-content">
       <div class="modal-header">
             <h4 class="modal-title" style="text-align: center; color:white;">
                 Aceptar la cerveza:
