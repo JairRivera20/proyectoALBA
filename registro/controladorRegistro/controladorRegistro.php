@@ -2,9 +2,8 @@
 <?php 
 if (!empty($_POST["registrarse"])) {
 
-    if (!empty($_POST["DNI"]) and !empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"]) and !empty($_POST["contraseña"]) and !empty($_POST["rol"])) {
+    if (!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"]) and !empty($_POST["contraseña"]) and !empty($_POST["rol"])) {
         
-        $DNI=$_POST["DNI"];
         $nombre=$_POST["nombre"];
         $apellido=$_POST["apellido"];
         $telefono=$_POST["telefono"];
@@ -22,9 +21,9 @@ if (!empty($_POST["registrarse"])) {
             include "correo.php";
             $rango=$_POST["rango"];
 
-            $sql=$conexion->query(" INSERT INTO usuarios (DNI, Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado, Codigo) VALUES ('$DNI', '$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', NULL, '$rango', NULL, 0, '$codigo') ");
+            $sql=$conexion->query(" INSERT INTO usuarios ( Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado, Codigo) VALUES ( '$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', NULL, '$rango', NULL, 0, '$codigo') ");
             
-            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo' AND DNI=$DNI");
+            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo'");
                 $alt=$sql->fetch_object();
                     $id=$alt->Id_usuario;
 
@@ -37,9 +36,9 @@ if (!empty($_POST["registrarse"])) {
             include "correo.php";
             $rango=$_POST["rango"];
             $region=$_POST["region"];
-            $sql=$conexion->query(" INSERT INTO usuarios (DNI, Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado, Codigo) VALUES ('$DNI', '$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', '$rango', NULL, '$region', 0, '$codigo') ");
+            $sql=$conexion->query(" INSERT INTO usuarios (Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado, Codigo) VALUES ('$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', '$rango', NULL, '$region', 0, '$codigo') ");
 
-            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo' AND DNI=$DNI");
+            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo' ");
                 $alt=$sql->fetch_object();
                     $id=$alt->Id_usuario;
 

@@ -86,11 +86,6 @@ if (empty($_SESSION["Id_usuario"])) {
 
             <form method="post">
 
-            <div class="DNI">
-                <label>DNI</label>
-                <input type="number" name="DNI" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('nombre').focus(); }">
-            </div>
-
             <div class="nombre">
                 <label>Nombre</label>
                 <input class="mayuscula limite" type="text" name="nombre" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('apellido').focus(); }">
@@ -155,7 +150,7 @@ if (empty($_SESSION["Id_usuario"])) {
                     <div class="tabla">
                     
 
-                    <h4>Listado de usuarios registros</h4>
+                    <h4>Listado de usuarios registrados</h4>
 
                     <?php 
 
@@ -169,7 +164,6 @@ if (empty($_SESSION["Id_usuario"])) {
                             <tr>
 
                                 <!-- <th class="col">Id</th> -->
-                                <th class="col">DNI</th>
                                 <th class="col">Nombre</th>
                                 <th class="col">Apellido</th>
                                 <th class="col">Teléfono</th>
@@ -188,7 +182,7 @@ if (empty($_SESSION["Id_usuario"])) {
                             <?php 
                             include "../config/conexion.php";
 
-                            $sql=$conexion->query("SELECT evento_usuarios.Id,evento.Nombre AS Evento, usuarios.Id_usuario, usuarios.DNI, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
+                            $sql=$conexion->query("SELECT evento_usuarios.Id, evento.Nombre AS Evento, usuarios.Id_usuario, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
                             FROM evento_usuarios
                             INNER JOIN evento on evento_usuarios.fk_evento=evento.Id_evento
                             INNER JOIN usuarios ON evento_usuarios.fk_usuarios= usuarios.Id_usuario
@@ -200,7 +194,6 @@ if (empty($_SESSION["Id_usuario"])) {
 
                             <tr>
                                 <!-- <td><?= $datos->Id_usuario?></td> -->
-                                <td><?= $datos->DNI?></td>
                                 <td><?= $datos->Nombre ?></td>
                                 <td><?= $datos->Apellido ?></td>
                                 <td><?= $datos->Telefono ?></td>
@@ -227,7 +220,7 @@ if (empty($_SESSION["Id_usuario"])) {
                             <?php
                             }
                     }else{
-                        $sql=$conexion->query("SELECT usuarios.Id_usuario, usuarios.DNI, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
+                        $sql=$conexion->query("SELECT usuarios.Id_usuario, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
                         FROM usuarios
                         WHERE usuarios.Activado=1 AND usuarios.Rol !=1");
 
@@ -236,7 +229,6 @@ if (empty($_SESSION["Id_usuario"])) {
 
 <tr>
                                         <!-- <td><?= $datos->Id_usuario?></td> -->
-                                        <td><?= $datos->DNI?></td>
                                         <td><?= $datos->Nombre ?></td>
                                         <td><?= $datos->Apellido ?></td>
                                         <td><?= $datos->Telefono ?></td>

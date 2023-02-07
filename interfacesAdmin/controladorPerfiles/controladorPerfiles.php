@@ -3,9 +3,8 @@
 
 if (!empty($_POST["registrar"])) {
 
-    if (!empty($_POST["DNI"]) and !empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"]) and !empty($_POST["contraseña"]) and !empty($_POST["rol"])) {
+    if (!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"]) and !empty($_POST["contraseña"]) and !empty($_POST["rol"])) {
         
-        $DNI=$_POST["DNI"];
         $nombre=$_POST["nombre"];
         $apellido=$_POST["apellido"];
         $telefono=$_POST["telefono"];
@@ -21,15 +20,15 @@ if (!empty($_POST["registrar"])) {
         /* aqui se hace la condicion segun el rol del usuario para la hora de guardar sus datos */
         if ($rol == 1) {
             
-            $sql=$conexion->query(" INSERT INTO usuarios (DNI, Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado) VALUES ('$DNI', '$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', NULL, NULL, NULL, 1) ");
+            $sql=$conexion->query(" INSERT INTO usuarios ( Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado) VALUES ('$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', NULL, NULL, NULL, 1) ");
         
         } elseif ($rol == 2) {
 
             $rango=$_POST["rango"];
 
-            $sql=$conexion->query(" INSERT INTO usuarios (DNI, Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado) VALUES ('$DNI', '$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', NULL, '$rango', NULL, 1) ");
+            $sql=$conexion->query(" INSERT INTO usuarios ( Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado) VALUES ('$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', NULL, '$rango', NULL, 1) ");
             
-            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo' AND DNI=$DNI");
+            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo'");
                 $alt=$sql->fetch_object();
                     $id=$alt->Id_usuario;
 
@@ -43,9 +42,9 @@ if (!empty($_POST["registrar"])) {
             
             $rango=$_POST["rango"];
             $region=$_POST["region"];
-            $sql=$conexion->query(" INSERT INTO usuarios (DNI, Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado) VALUES ('$DNI', '$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', '$rango', NULL, '$region', 1) ");
+            $sql=$conexion->query(" INSERT INTO usuarios ( Nombre, Apellido, Telefono, Correo, Contrasena, Hash512, Rol, fk_rango_competidor, fk_rango_juez, fk_region, Activado) VALUES ('$nombre', '$apellido', '$telefono', '$correo', '$contraseña', '$hash', '$rol', '$rango', NULL, '$region', 1) ");
 
-            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo' AND DNI=$DNI");
+            $sql=$conexion->query("SELECT * FROM usuarios WHERE Correo='$correo'");
                 $alt=$sql->fetch_object();
                     $id=$alt->Id_usuario;
 
