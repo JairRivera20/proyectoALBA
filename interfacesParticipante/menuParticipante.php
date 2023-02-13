@@ -31,13 +31,23 @@
             <?php 
 
             if ($_SESSION["Foto"] != "") {
-
+				?>
+				<a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
+				<?php
+				
                 echo '<img class="fotoPerfil" src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto">';
-                
+                ?>
+				</a>
+				<?php
+				
             } else {
-
+				?>
+				<a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
+				<?php
                 echo '<i class="bi bi-person-circle"></i>';
-                
+                ?>
+				</a>
+				<?php
             }
             
             ?>

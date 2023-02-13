@@ -18,6 +18,10 @@ body{
     background-attachment: fixed;
 }
 
+.espacio{
+	padding: 20px;
+}
+
 /* card del login */
 .container{
     width: 400px;
@@ -167,8 +171,8 @@ body{
 
     /* es el primer contenedor donde se encuentra las estadisticas */
     .container{
+		max-width: 100%;
         margin-top: 10px;
-        width: 330px;
     }
 
     

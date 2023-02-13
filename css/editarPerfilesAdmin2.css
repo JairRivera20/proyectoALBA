@@ -10,7 +10,7 @@
 
 /* fondo de la pagina y ajustes del body*/
 body{
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972.min.jpg");
+    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-sonja-maric-2707972-min.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -198,6 +198,7 @@ body{
     
     .table-responsive{
         overflow-x: scroll;
+		margin: 20px;
     }
     
     

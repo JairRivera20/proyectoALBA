@@ -80,6 +80,19 @@ body{
     margin-left: 82%;
 }
 
+/* estilo que se le da a otros botones que estan compratiendo el mismo css */
+.boton button{
+    transition: all 300ms;
+    cursor: pointer;
+    border-radius: 20px;
+	background: #39A900;
+}
+
+.boton button:hover{
+    transform: scale(1.10);
+}
+
+
 
 
 /*-------------- apartado del responsive ------------------*/
@@ -88,6 +101,7 @@ body{
 
     .res{
         overflow-x: scroll;
+		margin: 20px;
     }
     
     

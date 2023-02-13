@@ -171,6 +171,7 @@ body{
     
     .table-responsive{
         overflow-x: scroll;
+		margin: 20px;
     }
     
     

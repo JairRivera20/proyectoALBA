@@ -18,6 +18,10 @@ body{
     background-attachment: fixed;
 }
 
+.espacio{
+	padding: 20px;
+}
+
 /* card del formulario */
 .formulario{
     width: 450px;

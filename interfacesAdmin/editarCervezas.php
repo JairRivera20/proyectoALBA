@@ -174,22 +174,22 @@ mysqli_close($conexion);
     <div>
 
             <?php
-                
+                /* que ese ultimo evento no sea vacío */
                 $check=$alt->Nombre;
                 if ($check!='') {
                 include "../config/conexion.php";
-                $evento=$alt->Id_evento;
+               
 
             ?>
         <!-- division inferior para la ver el listado -->
         <div class="table-responsive">
             <div class="tabla">
                 
-                <h4 class="text-center text-secondary">Cervezas registradas || <?=$alt->Nombre?></h4>
+                <h4 class="text-center text-secondary">Cervezas participes || <?=$alt->Nombre?></h4>
                 <table class="table table-dark table-striped">
                     <thead>
                         <tr>
-                        <th scope="col">Id cerveza</th>
+                        
                         <th scope="col">Nombre</th>
                         <th scope="col">Código</th>
                         <th scope="col">Participante</th>
@@ -210,13 +210,13 @@ mysqli_close($conexion);
                         INNER JOIN categorias ON categorias.Id_categoria=estilos.fk_categoria AND estilos.Id_estilo = cerveza.fk_estilo
                         INNER JOIN evento_usuarios ON usuarios.Id_usuario=evento_usuarios.fk_usuarios
                         INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
-                        WHERE evento_usuarios.fk_evento=$i+1 AND usuarios.Rol!=1");
+                        WHERE evento_usuarios.fk_evento=($alt->Id_evento) AND usuarios.Rol!=1");
                         /* se crea un while para listar los datos y se repite la la cantidad de filas de la tabla*/
                         while($datos=$sql->fetch_object()){ 
                         ?>
                             <tr>
                                 <!-- se debe colocar el nombre de los atributos de la tabla que se mostrarán en la tabla -->
-                                <td><?=$datos->Id_cerveza?></td>
+                                <!-- <td><?=$datos->Id_cerveza?></td> -->
                                 <td><?=$datos->Nombre?></td>
                                 <td><?=$datos->Codigo?></td>
                                 <td><?=$datos->Usuario?></td>
@@ -241,12 +241,15 @@ mysqli_close($conexion);
             </div>
         </div>
         <?php
+            /* cervezas del evento anterior */
             }else {
+                $sql = $conexion->query("SELECT * FROM evento ORDER BY Id_vento DESC LIMIT 1,1 ");
+                $alt=$sql->Nombre
                 ?>
                 <div class="table-responsive">
                     <div class="tabla">
                 
-                    <h4 class="text-center text-secondary">Cervezas registradas</h4>
+                    <h4 class="text-center text-secondary">Cervezas participes || <?=$alt->Nombre?></h4>
                     <table class="table table-dark table-striped">
                     <thead>
                         <tr>
@@ -268,7 +271,10 @@ mysqli_close($conexion);
                         FROM cerveza 
                         INNER JOIN usuarios ON cerveza.fk_usuario=usuarios.Id_usuario
                         INNER JOIN estilos ON estilos.Id_estilo=cerveza.fk_estilo
-                        INNER JOIN categorias ON categorias.Id_categoria=estilos.fk_categoria AND estilos.Id_estilo = cerveza.fk_estilo");
+                        INNER JOIN categorias ON categorias.Id_categoria=estilos.fk_categoria AND estilos.Id_estilo = cerveza.fk_estilo
+                        INNER JOIN evento_usuarios ON usuarios.Id_usuario=evento_usuarios.fk_usuarios
+                        INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
+                        WHERE evento_usuarios.fk_evento=($alt->Id_evento) AND usuarios.Rol!=1");
                         /* se crea un while para listar los datos y se repite la la cantidad de filas de la tabla*/
                         while($datos=$sql->fetch_object()){ 
                         ?>
@@ -301,75 +307,6 @@ mysqli_close($conexion);
                 <?php
             }
             ?>
-
-            <?php
-                if ($alt!=null) {
-                include "../config/conexion.php";
-            ?>
-                <br>
-                <!-- division inferior para la ver el listado general de todas las cervezas registradas-->
-                <div class="table-responsive">
-                    <div class="tabla">
-                    
-                    
-                    <h4 class="text-center text-secondary">Cervezas registradas</h4>
-                    <table class="table table-dark table-striped">
-                        <thead>
-                            <tr>
-                            <th scope="col">Id cerveza</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Código</th>
-                            <th scope="col">Participante</th>
-                            <th scope="col">Categoría</th>
-                            <th scope="col">Estilo</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- se muestran datos de la tabla y se hace la consulta -->
-                            <?php
-                            include "../config/conexion.php";
-                            $sql=$conexion->query("SELECT cerveza.Id_cerveza, cerveza.Nombre, cerveza.Codigo, usuarios.Nombre AS Usuario, estilos.Nombre AS Estilo, categorias.Nombre AS Categoria
-                            FROM cerveza 
-                            INNER JOIN usuarios ON cerveza.fk_usuario=usuarios.Id_usuario
-                            INNER JOIN estilos ON estilos.Id_estilo=cerveza.fk_estilo
-                            INNER JOIN categorias ON categorias.Id_categoria=estilos.fk_categoria AND estilos.Id_estilo = cerveza.fk_estilo
-                            INNER JOIN evento_usuarios ON usuarios.Id_usuario=evento_usuarios.fk_usuarios
-                            INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento");
-                            /* se crea un while para listar los datos y se repite la la cantidad de filas de la tabla*/
-                            while($datos=$sql->fetch_object()){ 
-                            ?>
-                                <tr>
-                                    <!-- se debe colocar el nombre de los atributos de la tabla que se mostrarán en la tabla -->
-                                    <td><?=$datos->Id_cerveza?></td>
-                                    <td><?=$datos->Nombre?></td>
-                                    <td><?=$datos->Codigo?></td>
-                                    <td><?=$datos->Usuario?></td>
-                                    <td><?=$datos->Categoria?></td>
-                                    <td><?=$datos->Estilo?></td>
-                                    <!-- iconos llamados mediante scrpit de font-awesome -->
-                                    <td>
-                                        <!-- redireccionamos a la pagina de modificacion y mandamos consigo el valor que hay en la variable -->
-                                        <a href="modificarCervezas/modificarCervezas.php?Id_cerveza=<?=$datos->Id_cerveza?>"class="btn btn-small btn-warning"><i class="bi bi-pencil"></i></a>
-                                    </td>
-
-                                    <td>    
-                                        <a onclick="return eliminar()" href="editarCervezas.php?Id_cerveza=<?=$datos->Id_cerveza?>"class="btn btn-small btn-danger"><i class="bi bi-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <!-- abrimos php para cerrar el html y php -->
-                            <?php }
-                            ?>
-                        </tbody>
-                    </table>
-                    
-                    </div>
-                </div> 
-                <br>
-                    <?php
-                }
-                ?>
 
             <?php
                     }else {

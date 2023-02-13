@@ -3,10 +3,9 @@
 
 if (!empty($_POST["modificarPerfil"])) {
     
-    if (!empty($_POST["DNI"]) and !empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"]) and !empty($_POST["contraseña"]) and !empty($_POST["rol"])) {
+    if (!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["telefono"]) and !empty($_POST["correo"]) and !empty($_POST["contraseña"]) and !empty($_POST["rol"])) {
         
         $id=$_POST["Id_usuario"];
-        $DNI=$_POST["DNI"];
         $nombre=$_POST["nombre"];
         $apellido=$_POST["apellido"];
         $telefono=$_POST["telefono"];
@@ -17,7 +16,7 @@ if (!empty($_POST["modificarPerfil"])) {
         
         $rol=$_POST["rol"];
         
-        $sql=$conexion->query(" UPDATE usuarios SET DNI='$DNI', Nombre='$nombre', Apellido='$apellido', Telefono='$telefono', Correo='$correo', Contrasena='$contraseña', Hash512='$hash', Rol='$rol' WHERE Id_usuario=$id ");
+        $sql=$conexion->query(" UPDATE usuarios SET Nombre='$nombre', Apellido='$apellido', Telefono='$telefono', Correo='$correo', Contrasena='$contraseña', Hash512='$hash', Rol='$rol' WHERE Id_usuario=$id ");
 
         if ($sql == 1) {
             

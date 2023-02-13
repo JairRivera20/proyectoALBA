@@ -29,6 +29,8 @@ $resultados=$sql->fetch_assoc()
             return respuesta;
     }
 </script>
+
+<div class="espacio">
 <div class="container">
     
     <div class="form">
@@ -107,6 +109,7 @@ $resultados=$sql->fetch_assoc()
 
 
     </div>
+	</div>
 	
 	<!-- javascript para que al ingresar los datos estos comiecen con letra mayuscula -->
     <script src="../js/mayuscula2.js"></script>

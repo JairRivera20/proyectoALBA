@@ -181,6 +181,8 @@ if (empty($_SESSION["Id_usuario"])) {
 
                             <?php 
                             include "../config/conexion.php";
+                            $sql=$conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 0,1");
+                            $alt=$sql->fetch_object();
 
                             $sql=$conexion->query("SELECT evento_usuarios.Id, evento.Nombre AS Evento, usuarios.Id_usuario, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
                             FROM evento_usuarios
@@ -188,46 +190,47 @@ if (empty($_SESSION["Id_usuario"])) {
                             INNER JOIN usuarios ON evento_usuarios.fk_usuarios= usuarios.Id_usuario
                             WHERE usuarios.Activado=1 AND usuarios.Rol !=1");
                             
-
+                            /* compruebo que haya minimo un evento */
                             if ($alt!=null) {
-                            while($datos=$sql->fetch_object()){ ?>
-
-                            <tr>
-                                <!-- <td><?= $datos->Id_usuario?></td> -->
-                                <td><?= $datos->Nombre ?></td>
-                                <td><?= $datos->Apellido ?></td>
-                                <td><?= $datos->Telefono ?></td>
-                                <td><?= $datos->Correo ?></td>
-                                <td><?= $datos->Contrasena ?></td>
-                                <td><?php 
-                                $Rol=$datos->Rol;
-                                if ($Rol==1) {
-                                    echo "Administrador";
-                                }elseif ($Rol==2) {
-                                    echo "Juez";
-                                }elseif ($Rol==3) {
-                                    echo "Participante";
-                                }
-                                ?></td>
-
-                                <!-- boton de modificar usuario con respectivo id para cada usuario -->
-                                <td><a href="modificarPerfiles/modificarPerfiles.php?Id_usuario=<?= $datos->Id_usuario ?>"><i class="bi bi-pencil"></i></a></td>
                                 
-                                <!-- boton de eliminar usuario con respectivo id para cada usuario -->
-                                <td><a onclick="return eliminar()" href="editarPerfiles.php?Id_usuario=<?= $datos->Id_usuario ?>"><i class="bi bi-trash"></i></a></td>
-                            </tr>
+                                    while($datos=$sql->fetch_object()){ ?>
 
-                            <?php
-                            }
-                    }else{
-                        $sql=$conexion->query("SELECT usuarios.Id_usuario, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
-                        FROM usuarios
-                        WHERE usuarios.Activado=1 AND usuarios.Rol !=1");
+                                        <tr>
+                                            <!-- <td><?= $datos->Id_usuario?></td> -->
+                                            <td><?= $datos->Nombre ?></td>
+                                            <td><?= $datos->Apellido ?></td>
+                                            <td><?= $datos->Telefono ?></td>
+                                            <td><?= $datos->Correo ?></td>
+                                            <td><?= $datos->Contrasena ?></td>
+                                            <td><?php 
+                                            $Rol=$datos->Rol;
+                                            if ($Rol==1) {
+                                                echo "Administrador";
+                                            }elseif ($Rol==2) {
+                                                echo "Juez";
+                                            }elseif ($Rol==3) {
+                                                echo "Participante";
+                                            }
+                                            ?></td>
+            
+                                            <!-- boton de modificar usuario con respectivo id para cada usuario -->
+                                            <td><a href="modificarPerfiles/modificarPerfiles.php?Id_usuario=<?= $datos->Id_usuario ?>"><i class="bi bi-pencil"></i></a></td>
+                                            
+                                            <!-- boton de eliminar usuario con respectivo id para cada usuario -->
+                                            <td><a onclick="return eliminar()" href="editarPerfiles.php?Id_usuario=<?= $datos->Id_usuario ?>"><i class="bi bi-trash"></i></a></td>
+                                        </tr>
+            
+                                        <?php
+                                        }
+                            /* si no hay minimo 1 evento entonces que muestre estos datos */
+                            }else{
+                                $sql=$conexion->query("SELECT usuarios.Id_usuario, usuarios.Nombre, usuarios.Apellido, usuarios.Telefono, usuarios.Correo, usuarios.Contrasena, usuarios.Rol
+                                FROM usuarios
+                                WHERE usuarios.Activado=1 AND usuarios.Rol !=1");
 
-                        while ($datos=$sql->fetch_object()){
-                            ?>
-
-<tr>
+                                while ($datos=$sql->fetch_object()){
+                                    ?> 
+                                    <tr>
                                         <!-- <td><?= $datos->Id_usuario?></td> -->
                                         <td><?= $datos->Nombre ?></td>
                                         <td><?= $datos->Apellido ?></td>

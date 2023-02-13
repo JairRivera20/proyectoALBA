@@ -1,6 +1,12 @@
 /* estos es pra llamar el tipo de fuente */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
 
+/* Para quitar el scroll de la pagina */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -153,11 +159,153 @@ body{
 
 /* --------------------------listado de eventos--------------------------- */
 
+/* boton del de asignar mesa que esta en la principal */
+.boton{
+    text-align: center;
+}
+
+.boton button{
+    width: 250px;
+    height: 50px;
+    background: #39A900;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin-top: 50px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.boton button:hover{
+    transform:  scale(1.10);
+}
+
+/* botones que van en el modal */
+.botones{
+    display: flex;
+}
+
+.botones button{
+    margin: 20px;
+    margin-top: 60px;
+    width: 210px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* el select que se encuentra dentro del modal */
+label{
+    color: #fff;
+}
+
+.selecModal select{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+}
+
+/* los input que se encuentran en el modal */
+.form input[type="number"]{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    -moz-appearance: textfield;
+}
+
+/* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+.form input[type="number"]::-webkit-outer-spin-button,
+.form input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+
+/* style que se le dentro del archivo "beer.php" */
+.beer{
+    width: max-content;
+    background: rgba(119, 117, 86, 0.445);
+    margin: auto;
+    top: 50px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+
+.beer h2{
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+}
+
+.beer select{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.boton2{
+    text-align: center;
+}
+
+.boton2 button{
+    width: 120px;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.boton2 button:hover{
+    transform:  scale(1.10);
+    background: #39A900;
+}
+
+/* boton de regresar */
+.botonRegresar button{
+    width: 100px;
+    height: 40px;
+    margin: 40px auto auto auto;
+    background: #39A900;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.botonRegresar button:hover{
+    transform: scale(1.10);
+}
+
+
 /* card del listado de los eventos */
 .tabla{
     width: max-content;
     background: rgba(119, 117, 86, 0.445);
-    margin: auto;
+    margin: 5% auto auto auto;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 30px;
@@ -224,6 +372,16 @@ body{
     
     .table-responsive{
         overflow-x: scroll;
+        margin: 20px;
+    }
+
+    .botones{
+        display: block;
+    }
+
+    .botones button{
+        margin: 15px;
+        width: 170px;
     }
     
 }

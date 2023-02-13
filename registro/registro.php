@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- llamado de jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-	<!-- tab en el enter -->
-		<script src="../js/enter.js"></script>
     
     <!-- script para el select padre -->
     <script type="text/javascript">
@@ -45,6 +43,7 @@
 <body>
 
     <!-- Formulario del registro de los usarios -->
+	<div class="espacio">
     <div class="formulario">
 
         <h1>Registro</h1>
@@ -113,7 +112,8 @@
 
         </form>
     
-    </div>    
+    </div> 
+	</div>
 
         <!-- javascript para la funcionaliodad del ojo de password -->
         <script src="../js/mostrarOcultarContrasena.js"></script>

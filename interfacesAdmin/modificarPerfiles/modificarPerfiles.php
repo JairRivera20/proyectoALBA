@@ -37,11 +37,6 @@ $sql=$conexion->query(" SELECT * FROM usuarios WHERE Id_usuario=$id ");
 
             <input type="hidden" name="Id_usuario" value="<?= $_GET["Id_usuario"]?>">
 
-            <div class="DNI">
-                <label>DNI</label>
-                <input type="number" name="DNI" value="<?= $datos->DNI ?>">
-            </div>
-
             <div class="nombre">
                 <label>Nombre</label>
                 <input type="text" name="nombre" value="<?= $datos->Nombre ?>">

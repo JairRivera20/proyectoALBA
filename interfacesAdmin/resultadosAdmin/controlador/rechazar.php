@@ -45,15 +45,16 @@ $datos=$sql->fetch_object()
     <!-- llamada de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
-  <link rel="stylesheet" href="http://localhost/proyectoalba/css/resultados2.css">
-  <link rel="stylesheet" href="../../../css/resultados2.css">
-  <link rel="icon" href="../../../img/LOGO ALBA V.png">
+  <link rel="stylesheet" href="../../../css/resultados3.css">
+  <link rel="icon" href="../../../img/Logo.png">
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 
 </head>
 <body>
+<br><br><br>
+<div class="res">
   <div class="tabla">        
         <h4 class="">
         Evento <?=$dat->Nombre?>
@@ -146,14 +147,14 @@ $datos=$sql->fetch_object()
           <div class="botones">
 
             <div class="boton">
-              <a href="../index.php"><button type="button" style="background: rgba(255, 208, 0, 0.76); border:yellow;" class="btn btn-primary">Regresar</button></a>
+              <a href="../index.php"><button type="button" style="background: #39A900; border:yellow;" class="btn btn-primary">Regresar</button></a>
             </div>
 
             <div class="boton2">
 
             <form action="stats.php" method="POST">
               <input type="hidden" name="id" value="<?php echo $id?>">
-              <button type="submit" style="background: rgba(255, 208, 0, 0.76); border:yellow" class="btn btn-lg btn-primary" >
+              <button type="submit" style="background: #39A900; border:yellow" class="btn btn-lg btn-primary" >
               <i class="bi bi-clipboard-data"></i>
                 Estadística
               </button>
@@ -167,10 +168,20 @@ $datos=$sql->fetch_object()
         }else {
           ?>
           <br>
+		  <div class="res">
           <div>
             <h4>
               No hay juzgamientos hechos para esta cerveza.
             </h4>
+			
+			<div class="botones">
+
+            <div class="boton">
+              <a href="../index.php"><button type="button" style="background: #39A900; border:yellow;" class="btn btn-primary">Regresar</button></a>
+            </div>
+
+          </div>
+		  
           </div>
           <?php
         }
@@ -178,6 +189,6 @@ $datos=$sql->fetch_object()
         
 
   </div>
-  
+ </div> 
 </body>
 </html>
