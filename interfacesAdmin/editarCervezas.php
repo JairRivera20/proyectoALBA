@@ -135,10 +135,6 @@ mysqli_close($conexion);
             <!-- formulario para el ingreso de datos a la base de datos -->
             <div class="form-group row">                
                 <div class="mb-2 col-sm-14">
-                    <label>Nombre de la cerveza</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
-                </div>
-                <div class="mb-2 col-sm-14">
                     <label>Código</label>
                     <input type="text" class="form-control" name="codigo" id="codigo" value="<?=$cod?>" readonly>                
                     
@@ -166,6 +162,10 @@ mysqli_close($conexion);
                         <option value="" selected disabled> Seleccione estilo </option>
                     </select>
                 </div>                              
+                <div class="mb-2 col-sm-14">
+                    <label>N° muestras</label>
+                    <input type="number" class="form-control" id="muestras" name="muestras">
+                </div>
             </div>
             <!-- -------------------------------------------------------------------------- -->
             <input type="submit" value="Registrar" name="btnregistrar" class="btn btn-primary">
@@ -190,11 +190,11 @@ mysqli_close($conexion);
                     <thead>
                         <tr>
                         
-                        <th scope="col">Nombre</th>
                         <th scope="col">Código</th>
                         <th scope="col">Participante</th>
                         <th scope="col">Categoría</th>
                         <th scope="col">Estilo</th>
+						<th scope="col">N° muestras</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
                         </tr>
@@ -203,7 +203,7 @@ mysqli_close($conexion);
                         <!-- se muestran datos de la tabla y se hace la consulta -->
                         <?php
                         include "../config/conexion.php";
-                        $sql=$conexion->query("SELECT cerveza.Id_cerveza, cerveza.Nombre, cerveza.Codigo, usuarios.Nombre AS Usuario, estilos.Nombre AS Estilo, categorias.Nombre AS Categoria
+                        $sql=$conexion->query("SELECT cerveza.Id_cerveza, cerveza.Muestras, cerveza.Codigo, usuarios.Nombre AS Usuario, estilos.Nombre AS Estilo, categorias.Nombre AS Categoria
                         FROM cerveza 
                         INNER JOIN usuarios ON cerveza.fk_usuario=usuarios.Id_usuario
                         INNER JOIN estilos ON estilos.Id_estilo=cerveza.fk_estilo
@@ -217,11 +217,12 @@ mysqli_close($conexion);
                             <tr>
                                 <!-- se debe colocar el nombre de los atributos de la tabla que se mostrarán en la tabla -->
                                 <!-- <td><?=$datos->Id_cerveza?></td> -->
-                                <td><?=$datos->Nombre?></td>
+                                
                                 <td><?=$datos->Codigo?></td>
                                 <td><?=$datos->Usuario?></td>
                                 <td><?=$datos->Categoria?></td>
                                 <td><?=$datos->Estilo?></td>
+								<td><?=$datos->Muestras?></td>
                                 <!-- iconos llamados mediante scrpit de font-awesome -->
                                 <td>
                                     <!-- redireccionamos a la pagina de modificacion y mandamos consigo el valor que hay en la variable -->

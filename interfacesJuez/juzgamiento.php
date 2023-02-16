@@ -60,7 +60,6 @@ $Id_usuario=$_SESSION['Id_usuario'];
             /* header("location:resultados.php"); */
         }
         
-        
     ?>
    
 <?php
@@ -72,7 +71,7 @@ $Id_usuario=$_SESSION['Id_usuario'];
             include "../config/conexion.php";
             $sql=$conexion->query("SELECT Id, Juzgado,
             (SELECT Nombre FROM usuarios WHERE Id_usuario=general.fk_usuario AND Id_usuario=$Id_usuario) AS Usuario, 
-            cerveza.Nombre AS Cerveza, categorias.Nombre AS Categoria,estilos.Id_estilo, estilos.Nombre AS Estilo, cerveza.Codigo, general.Mesa
+            categorias.Nombre AS Categoria,estilos.Id_estilo, estilos.Nombre AS Estilo, cerveza.Codigo, general.Mesa
             FROM general 
             INNER JOIN cerveza ON general.fk_cerveza=cerveza.Id_cerveza
             INNER JOIN estilos ON cerveza.fk_estilo=estilos.Id_estilo
@@ -103,7 +102,7 @@ $Id_usuario=$_SESSION['Id_usuario'];
 
                         <div class="textos">
 
-                            <br>
+                            
                             <h2>Codigo:</h2>
                             <input type="text" value="<?=$next->Codigo?>" readonly onmousedown="return false;">
 
@@ -114,15 +113,17 @@ $Id_usuario=$_SESSION['Id_usuario'];
 
 
                             <div class="txtEstilos">
+							<?php  include('./espanol.php'); ?>	
                                 <button class="botonEstilos" type="button"  data-toggle="modal" data-target="#estiloS">
                                     <?=$next->Estilo?> - ES
                                 </button>
-                                <?php  include('./espanol.php'); ?>
+                                
 
                                 <button class="botonEstilos" type="button"  data-toggle="modal" data-target="#estiloN">
                                     <?=$next->Estilo?> - EN
                                 </button>
-                                <?php  include('./ingles.php'); ?>
+								<?php  include('./ingles.php'); ?>
+                                
                             </div>
                             <br>
 

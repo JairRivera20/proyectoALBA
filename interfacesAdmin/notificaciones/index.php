@@ -53,8 +53,10 @@ if (empty($_SESSION["Id_usuario"])) {
       <?php
       include('modelo/conexion.php');
 
-      $sqlCliente   = ("SELECT cerveza.Id_cerveza AS id, cerveza.Nombre,cerveza.Codigo, usuarios.Nombre AS usuario, rango_competidor.Nombre AS rango 
+      $sqlCliente   = ("SELECT cerveza.Id_cerveza AS id, cerveza.Muestras,cerveza.Codigo,categorias.Nombre AS categoria,estilos.Nombre AS estilos,usuarios.Nombre AS usuario, rango_competidor.Nombre AS rango 
       FROM cerveza 
+      INNER JOIN estilos ON estilos.Id_estilo = cerveza.fk_estilo
+      INNER JOIN categorias ON categorias.Id_categoria = estilos.fk_categoria
       INNER JOIN usuarios ON cerveza.fk_usuario = usuarios.Id_usuario
       INNER JOIN rango_competidor ON usuarios.fk_rango_competidor = rango_competidor.Id_rango_competidor
       WHERE cerveza.Pendiente=0 AND usuarios.Rol = 3");
@@ -80,8 +82,9 @@ if (empty($_SESSION["Id_usuario"])) {
           <table class="table">
               <thead>
                 <tr>
-                <th scope="col">Nombre </th>
                 <th scope="col">Código </th>
+				<th scope="col">Categoría</th>
+				<th scope="col">Estilo</th>
                 <th scope="col">Participante </th>
                 <th scope="col">Rango</th>
 				<th scope="col"></th>
@@ -91,8 +94,9 @@ if (empty($_SESSION["Id_usuario"])) {
                 <?php 
                     while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                 <tr>
-                  <td><?php echo $dataCliente['Nombre']; ?></td>
                   <td><?php echo $dataCliente['Codigo']; ?></td>
+                  <td><?php echo $dataCliente['categoria']; ?></td>
+				  <td><?php echo $dataCliente['estilos']; ?></td>
                   <td><?php echo $dataCliente['usuario']; ?></td>
                   <td><?php echo $dataCliente['rango']; ?></td>
                   
@@ -122,7 +126,7 @@ if (empty($_SESSION["Id_usuario"])) {
   </div>
 
     <div class="boton">
-      <button type="button" onclick="history.back()" style="background: #39A900; border:yellow" class="btn btn-primary">Regresar</button>
+	<a href="../inicioAdmin.php"><button type="button" style="background: #39A900; border:yellow" class="btn btn-primary">Regresar</button></a> 
     </div>
 
                 

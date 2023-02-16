@@ -55,15 +55,18 @@ try {
                 Para ingresar de nuevo a la plataforma esta es su nueva contraseña temporal:</p>
                 <h2> '.$contrasena.' </h2>
                 <br>
+                <a style="text-decoration: none; color: white;" href="https://pruebas.migtutor.com/login/login.php">
                 <button style="background-color: #39A900;
                         font-size: 20px;
                         width: 200px;
                         padding: 20px;
                         border-radius: 10px;
                         border: none;
-                        color: white;">
-                <a style="text-decoration: none; color: white;" href="https://pruebas.migtutor.com/login/login.php">Iniciar Sesión</a>
+                        color: white;
+						cursor: pointer;">
+                Iniciar Sesión
                 </button>
+                </a>
                 <br>
                 <br>
                 <p>

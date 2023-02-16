@@ -48,7 +48,7 @@ $cuantas = mysqli_num_rows($sql);
 				<a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
 				<?php
 				
-                echo '<img class="fotoPerfil" src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto">';
+                echo '<div class="fotoP"><img src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto"></div>';
                 ?>
 				</a>
 				<?php

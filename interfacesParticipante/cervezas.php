@@ -32,15 +32,26 @@ if ($datos!=null) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cervezas</title>
-
     <link rel="stylesheet" href="../css/cervezas1.css">
     <link rel="icon" href="../img/Logo.png">
 </head>
     <?php include("menuParticipante.php"); ?>
     <div>
+	<div class="table-responsive">
+		<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Categoria</th>
+					<th>Estilo</th>
+					<th>Código</th>
+					<th>Estado</th>
+				</tr>
+			</thead>
+			<tbody>
         <?php
         if ($ok==1) {
-            $sql=$conexion->query("SELECT cerveza.Nombre,estilos.Nombre AS Estilo,categorias.Nombre AS Categoria,cerveza.Pendiente
+            $sql=$conexion->query("SELECT estilos.Nombre AS Estilo,categorias.Nombre AS Categoria,cerveza.Pendiente, cerveza.Codigo
             FROM cerveza
             INNER JOIN estilos ON estilos.Id_estilo=cerveza.Id_cerveza
             INNER JOIN categorias ON categorias.Id_categoria=estilos.fk_categoria
@@ -48,24 +59,12 @@ if ($datos!=null) {
             
             while ($alt=$sql->fetch_object()) {
                 ?>
-			<div class="table-responsive">	
-                <div class="container">
-                    <table>
-                        <thead>
                             <tr>
-                                <th>Cerveza</th>
-                                <th>Categoria</th>
-                                <th>Estilo</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><?=$alt->Nombre?></td>
+                                
                                 <td><?=$alt->Categoria?></td>
                                 <td><?=$alt->Estilo?></td>
-
-                                <td><?php 
+								<td><?=$alt->Codigo?></td>
+								<td><?php 
                                     $p=$alt->Pendiente;
                                     if ($p==1) {
                                         echo "Aceptada";
@@ -74,19 +73,16 @@ if ($datos!=null) {
                                     }?>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-			</div>
                 <?php
             }
-            
-
-
         }else {
             echo "<div class='noCervezas';>No tienes cervezas registradas</div>";
         }
         ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
     </div>
     
     

@@ -127,10 +127,7 @@ $filas_2 = mysqli_fetch_all($query_2, MYSQLI_ASSOC);
             ?>
             <!-- formulario para el ingreso de datos a la base de datos -->
             <div class="form-group row">                
-                <div class="mb-2 col-sm-14">
-                    <label>Nombre de la cerveza</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
-                </div>
+                
                 <div class="mb-2 col-sm-14">
                     <label>Código</label>
                     <input type="text" class="form-control" name="codigo" id="codigo" value="<?=$cod?>" readonly>                
@@ -154,7 +151,11 @@ $filas_2 = mysqli_fetch_all($query_2, MYSQLI_ASSOC);
                     <select id="estilos" type="number" disabled="" class="form-control" name="estilos" onchange="fillBook();">
                         <option value="" selected disabled> Seleccione estilo </option>
                     </select>
-                </div>                              
+                </div>
+				<div class="mb-2 col-sm-14">
+					<label>N° muestras</label>
+                    <input type="number" id="muestsras" name="muestras">
+                </div>				
             </div>
             <!-- -------------------------------------------------------------------------- -->
             <input type="submit" value="Registrar" name="btnregistrar" class="btn btn-primary">

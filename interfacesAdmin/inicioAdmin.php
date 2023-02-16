@@ -31,7 +31,7 @@ if (empty($_SESSION["Id_usuario"])) {
             <div class="container">
                 <?php
                 
-                    $sql = $conexion->query("SELECT cerveza.Id_cerveza AS id, cerveza.Nombre,cerveza.Codigo, usuarios.Nombre AS usuario, rango_competidor.Nombre AS rango 
+                    $sql = $conexion->query("SELECT cerveza.Id_cerveza AS id, cerveza.Codigo, usuarios.Nombre AS usuario, rango_competidor.Nombre AS rango 
                     FROM cerveza 
                     INNER JOIN usuarios ON cerveza.fk_usuario = usuarios.Id_usuario
                     INNER JOIN rango_competidor ON usuarios.fk_rango_competidor = rango_competidor.Id_rango_competidor
@@ -39,7 +39,7 @@ if (empty($_SESSION["Id_usuario"])) {
                     $cuantas = mysqli_num_rows($sql);
 
                     ?>
-                    <a href="notificaciones/index.php" ><button>Tu tienes <?php echo $cuantas; ?> notifiaciones </button> </a>
+                    <a href="notificaciones/index.php" ><button>Notificaciones pendientes = <?php echo $cuantas; ?></button> </a>
                     <?php
 
                     $sql=$conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 0,1");

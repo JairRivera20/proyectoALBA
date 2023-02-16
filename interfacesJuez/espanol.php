@@ -11,7 +11,7 @@
             <?php
                 $num=$next->Id_estilo;
                 /* abre el txt */
-                $file = fopen("./estilos/en/styles.txt", "r");
+                $file = fopen("./estilos/es/estilos.txt", "r");
                 /* lo que queremos filtrar */
                 $hashtag = 'hashtag';
                 $texto = '<div id="'.$hashtag.$num.'">';

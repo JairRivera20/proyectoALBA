@@ -12,15 +12,17 @@ if ($alt!=null) {
 
 if (!empty($_POST["agregarEvento"])) {
 
-    if (!empty($_POST["nombreEvento"]) and !empty($_POST["fecha"]) and !empty($_POST["lugar"])) {
+    if (!empty($_POST["nombreEvento"]) and !empty($_POST["fecha"]) and !empty($_POST["fecha_f"]) and !empty($_POST["lugar"]) and !empty($_POST['fecha_f'])) {
 
         $nombreEvento=$_POST["nombreEvento"];
         $fecha=$_POST["fecha"];
+		$fecha_f=$_POST['fecha_f'];
         $lugar=$_POST["lugar"];
+		$mesas=$_POST['mesas'];
 
         if ($check!='') {
 
-            $sql=$conexion->query(" INSERT INTO evento (Nombre, Fecha, Lugar) VALUES ('$nombreEvento', '$fecha', '$lugar') ");
+            $sql=$conexion->query(" INSERT INTO evento (Nombre, Fecha, Fecha_fin, Lugar, Mesas) VALUES ('$nombreEvento', '$fecha', '$fecha_f','$lugar','$mesas') ");
 
             if ($sql == 1) {
                 

@@ -30,12 +30,12 @@
                 <br>
                 <div class="form">
                   <div>
-                      <label>N° Cervezas</label>
+                      <label>N° cervezas</label>
                       <input type="number" class="form-control" name="beer" id="beer">
                   </div>
                   <br>
                   <div>
-                      <label>N° Catadores</label>
+                      <label>N° jueces</label>
                       <input type="number" class="form-control" name="user" id="user">
                   </div>
                 </div>

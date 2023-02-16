@@ -60,14 +60,24 @@ if (empty($_SESSION["Id_usuario"])) {
                 </div>
 
                 <div class="fecha">
-                    <label>Fecha</label>
+                    <label>Fecha inicio</label>
                     <input type="date" id="fecha" name="fecha" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('lugar').focus(); }">
                 </div>
-
+					
+				<div class="fecha">
+                    <label>Fecha fin</label>
+                    <input type="date" id="fecha_f" name="fecha_f" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('lugar').focus(); }">
+                </div>
+				
                 <div class="lugar">
                     <label>Lugar</label>
-                    <input type="text" id="lugar" name="lugar">
+                    <input type="text" id="lugar" name="lugar" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('lugar').focus(); }>
                 </div>
+				
+				<div class="nombre_evento">
+					<label>Mesas</label>
+					<input type="number" id="mesas" name="mesas">
+				</div>
 
                 <input type="submit" name="agregarEvento" value="Agregar">
 
@@ -94,10 +104,12 @@ if (empty($_SESSION["Id_usuario"])) {
                         <thead>
                             <tr>
 
-                                <th class="col">Id</th>
+                                
                                 <th class="col">Nombre</th>
-                                <th class="col">Fecha</th>
+                                <th class="col">Fecha inicio</th>
+								<th class="col">Fecha fin</th>
                                 <th class="col">Lugar</th>
+								<th class="col">Mesas</th>
                                 <th class="col">Editar</th>
                                 <th class="col">Eliminar</th>
 
@@ -113,10 +125,12 @@ if (empty($_SESSION["Id_usuario"])) {
                             while($datos=$sql->fetch_object()){ ?>
 
                             <tr>
-                                <td><?= $datos->Id_evento?></td>
+                                <!-- <td><?= $datos->Id_evento?></td> -->
                                 <td><?= $datos->Nombre ?></td>
                                 <td><?= $datos->Fecha ?></td>
+								<td><?= $datos->Fecha_fin?></td>
                                 <td><?= $datos->Lugar ?></td>
+								<td><?= $datos->Mesas ?></td>
 
                                 <!-- boton de modificar evento con respectivo id para cada evento -->
                                 <td><a href="modificarEvento/modificarEvento.php?Id=<?= $datos->Id_evento ?>"><i class="bi bi-pencil"></i></a></td>

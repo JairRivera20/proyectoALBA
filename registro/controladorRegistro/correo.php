@@ -59,15 +59,18 @@ try {
                 <br>
                 <h2> '.$codigo.' </h2>
                 <br>
+                <a style="text-decoration: none; color: white;" href="https://pruebas.migtutor.com/registro/controladorRegistro/confirmar.php?correo='.$correo.'">
                 <button style="background-color: #39A900;
                         font-size: 20px;
                         width: 200px;
                         padding: 20px;
                         border-radius: 10px;
                         border: none;
-                        color: white;">
-                <a style="text-decoration: none; color: white;" href="https://pruebas.migtutor.com/registro/controladorRegistro/confirmar.php?correo='.$correo.'">Verificar Cuenta</a>
+                        color: white;
+						cursor: pointer;">
+                Verificar Cuenta
                 </button>
+                </a>
                 <br>
                 <br>
                 <p>

@@ -37,7 +37,7 @@
 				<a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
 				<?php
 				
-                echo '<img class="fotoPerfil" src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto">';
+                echo '<div class="fotoP"><img src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto"></div>';
                 ?>
 				</a>
 				<?php
@@ -78,7 +78,7 @@
             <a href="juzgamiento.php">
                 <div class="option">
                 <i class="bi bi-ui-checks" title="Formulario"></i> 
-                <h4>Formulario</h4>
+                <h4>Cata</h4>
                 </div>
             </a>
 

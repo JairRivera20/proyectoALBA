@@ -42,14 +42,23 @@ $sql=$conexion->query(" SELECT * FROM evento WHERE Id_evento=$id ");
         </div>
 
         <div class="fecha">
-            <label>Fecha</label>
+            <label>Fecha inicio</label>
             <input type="date" name="fecha" value="<?= $datos->Fecha ?>">
+        </div>
+		
+		<div class="fecha">
+            <label>Fecha fin</label>
+            <input type="date" name="fecha_f" value="<?= $datos->Fecha_fin?>">
         </div>
 
         <div class="lugar">
             <label>Lugar</label>
-            <input type="text" name="lugar" value="<?= $datos->Lugar ?>">
+            <input type="text" name="lugar" value="<?= $datos->Lugar?>">
         </div>
+		<div>
+			<label>Mesas</label>
+			<input type="number" name="mesas" value="<?=$datos->Mesas?>">
+		</div>
 
         <input type="submit" name="modificarEvento" value="Guardar cambios">
         <a href="../evento.php"><input type="button" name="regresar" value="Regresar"></a>

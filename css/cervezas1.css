@@ -89,6 +89,7 @@ body{
 
     .table-responsive{
         overflow-x: scroll;
+		margin: 5px;
     }
     
 }

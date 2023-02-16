@@ -10,26 +10,26 @@ if(isset($_POST['btnasignar'])) {
         $user=$_POST["user"];
 
         /* hacemos la consulta para insertar en la tabla de la base de datos */
-        $a=0;
-        while($a<$beer){
-            $a++;
-
-            $cer=$_POST['cerveza'.$a];
-            
-            /* insertar datos */
-            $sql=$conexion->query(
-                "INSERT INTO general (Id,fk_cerveza,fk_usuario,Ejemplo,Sin_fallas,Maravilloso,Comentario,Nota,Fallas,Aroma,Apariencia,Sabor,Sensacion,Juzgado,Mesa)
-                VALUES ('','$cer','','','','','','','','','','','',0,$mesa)");
-        }
-        $a=0;
-        while($a<$user){
-            $a++;
-            
-            $cata=$_POST['cata'.$a];
-
-            $sql=$conexion->query("UPDATE general SET fk_usuario=$cata WHERE Mesa=$mesa");
-
-        }
+		
+		$a=0;
+		
+		while($a<$user){
+			$cata=$_POST['cata'.$a];
+			$b=0;
+			while($b<$beer){
+					
+				$cer=$_POST['cerveza'.$b];
+			
+				/* insertar datos */
+				$sql=$conexion->query(
+				"INSERT INTO general (Id,fk_cerveza,fk_usuario,Ejemplo,Sin_fallas,Maravilloso,Comentario,Nota,Fallas,Aroma,Apariencia,Sabor,Sensacion,Juzgado,Mesa)
+				VALUES ('','$cer','$cata','','','','','','','','','','',0,$mesa)");
+				
+				$b++;	
+			}
+			$a++;
+		}
+		
             
         /* validamos si se registro correctamente */
 
