@@ -31,15 +31,15 @@ if (!empty($_POST["ingresar"])) {
                         
                         switch($_SESSION['Rol']){
                             case 1:
-                                header("location: ../interfacesAdmin/inicioAdmin.php");
+                                header("location: ../interfacesAdmin/index.php");
                             break;
     
                             case 2:
-                                header("location: ../interfacesJuez/inicioJuez.php");
+                                header("location: ../interfacesJuez/index.php");
                             break;
     
                             case 3:
-                                header("location: ../interfacesParticipante/inicioParticipante.php");
+                                header("location: ../interfacesParticipante/index.php");
                             break;
                             
                         }

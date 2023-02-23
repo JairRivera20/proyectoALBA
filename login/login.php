@@ -63,6 +63,8 @@
 
     <!-- javascript para la funcionaliodad del ojo de password -->
     <script src="../js/mostrarOcultarContrasena.js"></script>
+	
+	<script src="../js/mensajePestana.js"></script>
 
 </body>
 </html>

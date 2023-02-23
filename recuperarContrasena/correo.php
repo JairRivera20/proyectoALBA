@@ -48,7 +48,7 @@ try {
         <div>
             <div>
 
-                <h1>¡Hola de nuevo!</h1>
+                <h1>¡Hola de nuevo! 👋🏼</h1>
                 
                 <p>Usted ha solicitado el restablecimiento de su contraseña en ALBA.
                 <br>

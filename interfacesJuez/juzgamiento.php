@@ -10,7 +10,7 @@ if (empty($_SESSION["Id_usuario"])) {
     header("location: ../login/login.php");
 }
 
-$Id_usuario=$_SESSION['Id_usuario'];
+$id=$_SESSION['Id_usuario'];
 
 ?>
 
@@ -50,7 +50,7 @@ $Id_usuario=$_SESSION['Id_usuario'];
 
 <?php
         include "../config/conexion.php";
-        $sql="SELECT COUNT(Id) AS n FROM general WHERE fk_usuario=$Id_usuario AND Juzgado=0";
+        $sql="SELECT COUNT(Id) AS n FROM general WHERE fk_usuario=$id AND Juzgado=0";
         $query = mysqli_query($conexion, $sql);
         if ($query!=null) {
             $filas = mysqli_fetch_all($query, MYSQLI_ASSOC);  
@@ -70,17 +70,22 @@ $Id_usuario=$_SESSION['Id_usuario'];
         <?php
             include "../config/conexion.php";
             $sql=$conexion->query("SELECT Id, Juzgado,
-            (SELECT Nombre FROM usuarios WHERE Id_usuario=general.fk_usuario AND Id_usuario=$Id_usuario) AS Usuario, 
+            (SELECT Nombre FROM usuarios WHERE Id_usuario=general.fk_usuario) AS Usuario, 
             categorias.Nombre AS Categoria,estilos.Id_estilo, estilos.Nombre AS Estilo, cerveza.Codigo, general.Mesa
             FROM general 
             INNER JOIN cerveza ON general.fk_cerveza=cerveza.Id_cerveza
             INNER JOIN estilos ON cerveza.fk_estilo=estilos.Id_estilo
             INNER JOIN categorias ON estilos.fk_categoria=categorias.Id_categoria
             INNER JOIN usuarios ON cerveza.fk_usuario=usuarios.Id_usuario
-            WHERE general.Juzgado=0
+            WHERE general.fk_usuario=$id AND general.Juzgado=0
             LIMIT 0,1");
             $next=$sql->fetch_object();                              
         ?>
+		
+		<!-- div para el boton de regresar -->
+		<div id="icon" class="regresar">
+        
+		</div>
 
         <div class="container">
             
@@ -225,9 +230,9 @@ $Id_usuario=$_SESSION['Id_usuario'];
                             <input type="Number" onkeyup="this.value = MinMaxNumber(this, this.value)" min="0" max="12" name="aroma" placeholder="Nota" require>
                         </div>   
 
-                        <div class="botones">
-                            <button type="button" onclick="history.back()" name="regresar" value="Regresar">Regresar</button>
-                            <button type="button" onclick="miFuncion(); return false;" id="b1" class="bs siguiente">Siguiente</button>
+                        <div class="boton">
+                            <!-- <a href="inicioJuez.php"><button>Regresar</button></a> -->
+                            <button type="button" onclick="miFuncion(); return false;" id="b1" class="siguiente">Siguiente</button>
                         </div>
                         
                         
@@ -745,9 +750,9 @@ $Id_usuario=$_SESSION['Id_usuario'];
                             <input type="number" onkeyup="this.value = MinMaxNumber(this, this.value)" min="0" max="10" name="nota" placeholder="Nota" require>
                         </div>
 
-                        <div id="b2" class="botones">
+                        <div class="botones">
                             <button class="ba atras4">Anterior</button>
-                            <button type="submit" name="btnjuzgar" value="ok" onclick=reestablecer()>Registrar</button>
+                            <button class="bs" type="submit" name="btnjuzgar" value="ok" onclick=reestablecer()>Registrar</button>
                         </div>
 
                        <!--  <div class="boton">
@@ -802,6 +807,34 @@ $Id_usuario=$_SESSION['Id_usuario'];
             });
 
     });
+    </script>
+	
+	
+	
+	 <!-- script para el boton de regresar en esta interfaz -->
+    <script>
+
+    // Obtener el elemento div
+    var icon = document.getElementById("icon");
+
+    // Función para actualizar el icono según el ancho de la pantalla
+    function updateIcon() {
+    var screenWidth = window.innerWidth;
+    if (screenWidth <= 760) {
+        icon.innerHTML = "<a href='index.php'><button onclick='history.back()' name='regresar'><i class='bi bi-arrow-90deg-left'></i></button></a>";
+    } else {
+        icon.innerHTML = "<a href='index.php'><button onclick='history.back()' name='regresar'><i class='bi bi-arrow-90deg-left'></i> Regresar</button></a>"
+    }
+    }
+
+    // Ejecutar la función al cargar la página
+    updateIcon();
+
+    // Ejecutar la función cada vez que cambia el tamaño de la pantalla
+    window.addEventListener("resize", function() {
+    updateIcon();
+    });
+
     </script>
 
 </body>

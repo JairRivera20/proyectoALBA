@@ -73,7 +73,8 @@ body{
 }
 
 /* ajustes de algunos tipos de input */
-.form input[type="text"]{
+.form input[type="text"],
+.form input[type="number"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -81,6 +82,13 @@ body{
     height: 40px;
     font-size: 16px;
     color: #fff;
+	-moz-appearance: textfield;
+}
+
+/* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+.form input[type="number"]::-webkit-outer-spin-button,
+.form input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
 }
 
 .form input[type="submit"]{

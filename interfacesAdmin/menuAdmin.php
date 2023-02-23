@@ -1,7 +1,8 @@
 <?php
+include "../fin_evento.php";
 
 include "../config/conexion.php";
-$sql = $conexion->query("SELECT cerveza.Id_cerveza AS id, cerveza.Nombre,cerveza.Codigo, usuarios.Nombre AS usuario, rango_competidor.Nombre AS rango 
+$sql = $conexion->query("SELECT cerveza.Id_cerveza AS id,cerveza.Codigo, usuarios.Nombre AS usuario, rango_competidor.Nombre AS rango 
 FROM cerveza 
 INNER JOIN usuarios ON cerveza.fk_usuario = usuarios.Id_usuario
 INNER JOIN rango_competidor ON usuarios.fk_rango_competidor = rango_competidor.Id_rango_competidor
@@ -16,6 +17,11 @@ $cuantas = mysqli_num_rows($sql);
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
 <body id="body">
+
+	<?php 
+        include "../editarPerfil/editarPerfil.php";
+    ?>
+
 
     <!-- icono del menu desplegable -->
     <header>
@@ -41,26 +47,16 @@ $cuantas = mysqli_num_rows($sql);
             <div class="icono_nombre_perfil">
                 
 				
-            <?php 
+             <?php 
 
             if ($_SESSION["Foto"] != "") {
-				?>
-				<a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
-				<?php
-				
-                echo '<div class="fotoP"><img src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto"></div>';
-                ?>
-				</a>
-				<?php
+
+                echo '<label for="btn-modal"><div class="fotoP"><img src="data:image/jpg;base64,'. base64_encode($_SESSION["Foto"]).'" alt="Foto"></div></label>';
 				
             } else {
-				?>
-				<a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
-				<?php
-                echo '<i class="bi bi-person-circle"></i>';
-                ?>
-				</a>
-				<?php
+
+                echo '<label for="btn-modal"><div class="iconoPerfil"><i class="bi bi-person-circle"></i></div></label>';
+
             }
             
             ?>
@@ -69,11 +65,11 @@ $cuantas = mysqli_num_rows($sql);
                 <h4><?php echo$_SESSION["Nombre"]." ".$_SESSION["Apellido"]; ?></h4>
 
                 <!-- icono del lapiz editar -->
-                <a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
+                <!-- <a href="../editarPerfil/editarPerfil.php?Id_usuario=<?= $_SESSION["Id_usuario"] ?>">
                     <div class="lapiz">
                         <i class="bi bi-pencil-fill"></i>
                     </div>
-                </a>
+                </a> -->
                 
             </div>
 
@@ -81,7 +77,7 @@ $cuantas = mysqli_num_rows($sql);
         <!-- opciones del menu -->
         <div class="options_menu">
 
-            <a href="inicioAdmin.php">
+            <a href="index.php">
                 <div class="option">
                 <i class="bi bi-house" title="Inicio"></i> 
                 <h4>Inicio</h4>

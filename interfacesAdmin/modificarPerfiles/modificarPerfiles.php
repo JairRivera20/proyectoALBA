@@ -1,6 +1,16 @@
 <!-- seleccion del id de cada evento y saber los datos de cada uno de ellos -->
 <?php 
 
+session_start();
+if (empty($_SESSION["Id_usuario"])) {
+    header("location: ../../login/login.php");
+}else if (!empty($_SESSION["Rol"] != 1)) {
+
+    session_start();
+    session_destroy();
+    header("location: ../../login/login.php");
+};
+
 include "../../config/conexion.php";
 $id=$_GET["Id_usuario"];
 
@@ -22,6 +32,8 @@ $sql=$conexion->query(" SELECT * FROM usuarios WHERE Id_usuario=$id ");
 <body>
 
 <!-- fomulario en el cual se hacen las modificaciones del perfil -->
+
+<div class="espacio">
 
 <div class="container">
 
@@ -87,6 +99,8 @@ $sql=$conexion->query(" SELECT * FROM usuarios WHERE Id_usuario=$id ");
 
     </div>
     
+</div>
+
 </div>
     
 </body>

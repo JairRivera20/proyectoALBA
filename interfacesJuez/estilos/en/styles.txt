@@ -1,4 +1,4 @@
-<div id="hashtag1">
+<div id="hashtag2">
 American Light Lager
 
 Overall Impression: A highly carbonated, very light-bodied, 
@@ -58,7 +58,7 @@ Old Milwaukee Light
 Tags: session-strength, pale-color, bottom-fermented, lagered, 
 north-america, traditional-style, pale-lager-family, balanced </div>
 
-<div id="hashtag2">
+<div id="hashtag3">
 American Lager 
 Overall Impression: A very pale, highly-carbonated, light-
 bodied, well-attenuated lager with a very neutral flavor profile 
@@ -122,7 +122,7 @@ lagered, north-america, traditional-style, pale-lager-family,
 balanced
 </div>
 
-<div id="hashtag3">
+<div id="hashtag1">
 Cream Ale 
 Overall Impression: A clean, well-attenuated, highly 
 carbonated, flavorful American “lawnmower” beer. Easily 

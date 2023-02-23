@@ -23,6 +23,10 @@ if (empty($_SESSION["Id_usuario"])) {
   <!-- jquery  -->
   <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
   <!-- CSS only -->
+  
+      <!-- llamado de los iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
 
   <link rel="stylesheet" href="../../css/notificaciones4.css">
   <link rel="icon" href="../../img/Logo.png">
@@ -47,6 +51,10 @@ if (empty($_SESSION["Id_usuario"])) {
         }
       </style> -->
 </head>
+
+<div id="icon" class="regresar">
+    
+</div>
 
 <div class="container">
 
@@ -124,14 +132,11 @@ if (empty($_SESSION["Id_usuario"])) {
           </table>
       </div>
   </div>
-
-    <div class="boton">
-	<a href="../inicioAdmin.php"><button type="button" style="background: #39A900; border:yellow" class="btn btn-primary">Regresar</button></a> 
-    </div>
-
-                
+              
 
 </div>
+
+
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
@@ -178,5 +183,11 @@ if (empty($_SESSION["Id_usuario"])) {
 });
 </script>
 
+
+	    <!-- para que se pueda dar el estilo al boton de regresar -->
+    <script src="../../js/botonRegresar.js"></script>
+	
+	<script src="../../js/mensajePestana.js"></script>
+	
 </body>
 </html>

@@ -73,7 +73,8 @@ body{
 }
 
 /* ajustes de algunos tipos de input */
-.form input[type="text"]{
+.form input[type="text"],
+.form input[type="number"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -101,6 +102,11 @@ body{
 }
 
 /* --------------------------listado de eventos--------------------------- */
+
+.table-responsive{
+	padding: 20px;
+}
+
 
 /* card del listado de los eventos */
 .tabla{
@@ -156,6 +162,18 @@ body{
 
 /* ----------------------apartado del responsive----------------------- */
 
+/* ----------------------para pantallas medianas----------------------- */
+
+@media screen and (max-width: 1116px) {
+    
+    .table-responsive{
+        overflow-x: scroll;
+        margin: 80px;
+    }
+        
+}
+
+
 @media screen and (max-width: 760px) {
  
     /* card del formulario */
@@ -172,6 +190,7 @@ body{
     .table-responsive{
         overflow-x: scroll;
 		margin: 20px;
+		padding: 0;
     }
     
     

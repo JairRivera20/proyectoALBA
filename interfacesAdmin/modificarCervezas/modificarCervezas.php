@@ -1,4 +1,16 @@
 <?php
+
+session_start();
+if (empty($_SESSION["Id_usuario"])) {
+    header("location: ../../login/login.php");
+}else if (!empty($_SESSION["Rol"] != 1)) {
+
+    session_start();
+    session_destroy();
+    header("location: ../../login/login.php");
+};
+
+
 include "../../config/conexion.php";
 if(!$conexion){
   die("<br/>Sin conexi&oacute;n.");

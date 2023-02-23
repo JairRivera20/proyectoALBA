@@ -55,7 +55,13 @@ $cantidad     = mysqli_num_rows($queryCliente);
 
 ?>
 <?php  include('ModalAceptar.php'); ?>
-<br><br><br>
+
+	<!-- div para poner el boton de regresar -->
+	<div id="icon" class="regresar">
+		
+	</div>
+
+<br><br>
 <div class="res">
     <div class="tabla">        
         <h4 class="">Resultados</h4>
@@ -65,7 +71,7 @@ $cantidad     = mysqli_num_rows($queryCliente);
             <thead>
                 <tr>
                 <!-- <th scope="col">Id juzgamiento</th> -->
-                <th scope="col">Nombre de la cerveza</th>
+                
                 <!-- <th scope="col">Cóodigo de la cerveza</th> -->
                 <th scope="col">Categoría</th>
                 <th scope="col">Estilo</th>
@@ -89,7 +95,7 @@ $cantidad     = mysqli_num_rows($queryCliente);
                 <?php
                 include "controlador/eliminar_juzgamiento.php";
                 include "modelo/conexion.php";
-                 $sql=$conexion->query("SELECT Id,cerveza.Nombre, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, Ejemplo, Sin_fallas, Maravilloso, Comentario, Fallas, Nota, Aroma, Apariencia, Sabor, Sensacion 
+                 $sql=$conexion->query("SELECT Id, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, Ejemplo, Sin_fallas, Maravilloso, Comentario, Fallas, Nota, Aroma, Apariencia, Sabor, Sensacion 
                 FROM general 
                 INNER JOIN cerveza ON general.fk_cerveza=cerveza.Id_cerveza
                 INNER JOIN estilos ON cerveza.fk_estilo=estilos.Id_estilo
@@ -101,7 +107,7 @@ $cantidad     = mysqli_num_rows($queryCliente);
                     <tr>
                         <!-- se debe colocar el nombre de los atributos de la tabla que se mostrarán en la tabla -->
                         <!-- <td><?=$datos->Id?></td> -->
-                        <td><?=$datos->Nombre?></td>
+                        
                         <td><?=$datos->Categoria?></td>
                         <td><?=$datos->Estilo?></td>
                         <!-- <td><?=$datos->Codigo?></td> -->
@@ -153,7 +159,6 @@ $cantidad     = mysqli_num_rows($queryCliente);
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     
                     
                     
@@ -169,27 +174,7 @@ $cantidad     = mysqli_num_rows($queryCliente);
             
         </table>
 
-        <div class="boton">
-        <style>
-            .boton button{
-                width: 100px;
-                border: none;
-                outline: none;
-                height: 40px;
-                background: #39A900;
-                color: #fff;
-                font-size: 18px;
-                border-radius: 20px;
-                transition: all 300ms;
-                cursor: pointer;
-            }
-
-            .boton button:hover{
-                transform: scale(1.10);
-            }
-            </style>
-            <button type="button" onclick="history.back()">Regresar</button>
-        </div>
+        
     </div>
 </div>
 <!-- jquery -->
@@ -213,7 +198,10 @@ $cantidad     = mysqli_num_rows($queryCliente);
 });
 </script>
 
-
+	<!-- para que se pueda dar el estilo al boton de regresar -->
+    <script src="../../js/botonRegresar.js"></script>
+	
+	<script src="../../js/mensajePestana.js"></script>
 
 </body>
 </html>

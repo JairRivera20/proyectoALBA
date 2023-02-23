@@ -51,9 +51,9 @@ try {
         <div>
             <div>
 
-                <h1>¡Hola '.$nombre.'!</h1>
+                <h1>¡Hola '.$nombre.'! 😊👋🏼</h1>
                 
-                <p>Gracias por ser parte de nosotros
+                <p>Gracias por ser parte de nosotros 🍻🎊
                 <br>
                 Este es tu código de verificación de tu cuenta:</p>
                 <br>

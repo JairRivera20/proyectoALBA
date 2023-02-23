@@ -34,14 +34,14 @@ include '../config/conexion.php';
         include "controladoresCervezas/ctrlparticipar.php";
             $sql=$conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 0,1");
             $datos=$sql->fetch_object();
-            if ($datos!=null) {
-                $check=$datos->Nombre;
-                if ($check!='') {
-                    ?>
+			
+            if ($datos!=null) { ?>
+				
                     <div class="container">
                         <h4>Evento: <?=$datos->Nombre?></h4>
                         <h4>Lugar de realización: <?=$datos->Lugar?></h4>
-                        <h4>Fecha de inicio: <?=$datos->Fecha?></h4>
+                        <h4>Inicio: <?=$datos->Fecha?></h4>
+						<h4>Fin: <?=$datos->Fecha_fin?></h4>
                         <form method="POST">
                             <div>
                                 <input type="hidden" value="<?=$id?>" name="Id">
@@ -53,27 +53,16 @@ include '../config/conexion.php';
                         </form>
                     </div>
                     <?php
-                }else {
-                    $sql=$conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 1,1");
-                    $data=$sql->fetch_object();
-                    ?>
-                    <div class="container">
-                        <h4>Evento: <?=$data->Nombre?></h4>
-                        <h4>Lugar de realización: <?=$data->Lugar?></h4>
-                        <h4>Fecha de inicio: <?=$data->Fecha?></h4>
-                        
-                    </div>
-                    <?php
-                }
+                
     
-      }else {
+			}else {
                 echo "<div class='container' style='color: white;
                 margin-top: 20%;
                 padding: 0 0 20px 0;
                 text-align: center;
                 color: #fff;
-                font-size: 50px;'>No hay registros suficientes</div>";
-        }
+                font-size: 50px;'>No hay evento registrado</div>";
+			}
     ?>
 
 </body>

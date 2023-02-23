@@ -46,7 +46,7 @@
       </div>
       <div class="botones" style="background: rgba(65, 64, 59, 0.445);">
       <div>
-        <button type="button" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" style="background: red;" data-bs-dismiss="modal">Cerrar</button>
       </div>
         <div>
             <!-- Button trigger modal -->

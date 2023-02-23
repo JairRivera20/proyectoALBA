@@ -18,6 +18,10 @@ body{
     background-attachment: fixed;
 }
 
+.espacio{
+	padding-bottom: 80px;
+}
+
 /* card del login */
 .container{
     width: 400px;

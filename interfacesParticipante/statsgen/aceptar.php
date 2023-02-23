@@ -62,12 +62,22 @@ $total=$aromatot+$aparienciatot+$sabortot+$sensaciontot+$notatot;
     <!-- Include boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+	    <!-- llamada de iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+	
+	<title>Estadíticas</title>
 
     <link rel="stylesheet" href="../../css/estadisticas2.css">
     <link rel="icon" href="../../img/Logo.png">
 
 </head>
 <body>
+
+		<!-- div para el boton regresar -->
+	<div id="icon" class="regresar">
+        
+    </div>
+
   <div class="container">
       <!-- Create a canvas element where the radar chart will be rendered -->   
 
@@ -121,8 +131,8 @@ $total=$aromatot+$aparienciatot+$sabortot+$sensaciontot+$notatot;
           data: {
               labels: ['Aroma', 'Apariencia', 'Sabor', 'Sensación', 'General'],
               datasets: [{
-                backgroundColor: "rgba(238, 130, 238, 0.411)",
-                borderColor: "gold",
+                backgroundColor: "rgba(255, 238, 0, 0.308)",
+                borderColor: "#39A900",
                 pointRadius: 0,
                 data: <?php echo json_encode($data); ?>
               }]
@@ -192,9 +202,9 @@ $total=$aromatot+$aparienciatot+$sabortot+$sensaciontot+$notatot;
       ?>
     </div>
 
-    <div class="boton">
-        <input type="button" onclick="history.back()" value="Atrás">
-    </div>
+
+	
+	<script src="../../js/botonRegresar.js"></script>
 
 
 </body>

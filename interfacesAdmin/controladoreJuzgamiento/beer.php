@@ -2,16 +2,17 @@
 require_once '../../config/conexion.php'; //libreria de conexion a la base
 
 if (!empty($_POST['beer']) and !empty($_POST['mesa']) and !empty($_POST['user'])) {
+
     $sql = $conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 0,1");
     $eve=$sql->fetch_object();
-
-    /*obtenemos los datos del primer select para categorias*/
+    
     $sql = ("SELECT cerveza.Id_cerveza, categorias.Nombre AS categoria, estilos.Nombre AS estilo
     FROM cerveza 
     INNER JOIN estilos ON cerveza.fk_estilo = estilos.Id_estilo 
-    INNER JOIN categorias ON estilos.fk_categoria=categorias.Id_categoria");
+    INNER JOIN categorias ON estilos.fk_categoria=categorias.Id_categoria
+    WHERE cerveza.Seleccionada=0");
     $query = mysqli_query($conexion, $sql);
-    $filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
+    $filas = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
     /* obtenemos los datos de usuario */
     $sql_2 = "SELECT usuarios.Id_usuario, usuarios.Nombre, rango_juez.Nombre AS Rango
@@ -19,7 +20,7 @@ if (!empty($_POST['beer']) and !empty($_POST['mesa']) and !empty($_POST['user'])
     INNER JOIN evento ON evento_usuarios.fk_evento = evento.Id_evento
     INNER JOIN usuarios ON evento_usuarios.fk_usuarios=usuarios.Id_usuario
     INNER JOIN rango_juez ON usuarios.fk_rango_juez=rango_juez.Id_rango_juez
-    WHERE usuarios.Rol=2 AND evento.Id_evento=($eve->Id_evento)";
+    WHERE usuarios.Rol=2 AND evento.Id_evento=($eve->Id_evento) AND usuarios.Seleccionado=0";
     $query_2 = mysqli_query($conexion, $sql_2);
     $filas_2 = mysqli_fetch_all($query_2, MYSQLI_ASSOC);
 
@@ -41,20 +42,21 @@ if (!empty($_POST['beer']) and !empty($_POST['mesa']) and !empty($_POST['user'])
         <br>
         <label for="cervezas">Cervezas</label>
         <?php
-        while ($a < $beer) {
+
+       while ($a < $beer) {
             
             ?>
-            
-            <select id="cerveza<?=$a?>" class="form-control" name="cerveza<?=$a?>" type="number">
+            <select id="cerveza<?=$a?>" class="form-control select-cerveza" name="cerveza<?=$a?>" >
                 <option value="">- Seleccione cervezas -</option>
                 <?php foreach ($filas as $op): //llenar las opciones del select padre ?>
-                <option value="<?= $op['Id_cerveza']?>"><?=$op['categoria']," - ",$op['estilo']?></option>  
-                <?php endforeach; ?>
+                <option value="<?=$op['Id_cerveza']?>"><?=$op['categoria']," - ",$op['estilo']?></option>  
+                <?php
+                endforeach; ?>
             </select>
-
             <?php
-            $a++;
-        }
+           $a++;
+       } 
+       
         
         ?>
         <br>
@@ -65,7 +67,7 @@ if (!empty($_POST['beer']) and !empty($_POST['mesa']) and !empty($_POST['user'])
             
 			?>
             
-            <select id="cata<?=$a?>" class="form-control" name="cata<?=$a?>" type="number">
+            <select id="cata<?=$a?>" class="form-control select-cata" name="cata<?=$a?>">
                 <option value="">- Seleccione catadores -</option>
                 <?php foreach ($filas_2 as $op_2): //llenar las opciones del select padre ?>
                 <option value="<?= $op_2['Id_usuario']?>"><?=$op_2['Nombre']," - ",$op_2['Rango']?></option>  
@@ -88,3 +90,37 @@ if (!empty($_POST['beer']) and !empty($_POST['mesa']) and !empty($_POST['user'])
 <?php
 }
 ?>
+<script>
+$( document ).ready(function() {
+    $('.select-cerveza').change(function() {
+        // Obtener el valor seleccionado del select
+        var Seleccionada = $(this).val();
+
+        // Ocultar la opción con el valor seleccionado en los select posteriores
+        $('.select-cerveza').each(function() {
+            var opciones = $(this).find('option');
+            opciones.each(function() {
+                if ($(this).val() == Seleccionada) {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+    
+    //Lo mismo del anterior código pero para select-cata
+    $('.select-cata').change(function() {
+        // Obtener el valor seleccionado del select
+        var Seleccionado = $(this).val();
+
+        // Ocultar la opción con el valor seleccionado en los select posteriores
+        $('.select-cata').each(function() {
+            var opciones = $(this).find('option');
+            opciones.each(function() {
+                if ($(this).val() == Seleccionado) {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+});
+</script>

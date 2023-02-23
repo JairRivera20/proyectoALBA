@@ -215,15 +215,21 @@ body{
     margin: 20px 0;
 }
 
-.botones #b1{
-    margin-top: 6%;
+.botones{
+	display: flex;
+	margin-top: 60px;
+}
+
+.botones .ba,
+.botones .bs {
+	margin: 0 20px;
+}
+
+.boton #b1{
+	margin-top: 6%;
     margin-bottom: 10%;
 }
 
-.grande #b2{
-    margin-top: 15%;
-    
-}
 
 /* esto es el apartado html dentro de php pero que se llama la clase para darle el css */
 .noCervezas{
@@ -233,6 +239,27 @@ body{
     text-align: center;
     color: #fff;
     font-size: 50px;
+}
+
+
+/* boton regresar */
+.regresar button{
+    width: 130px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.regresar button:hover{
+    transform: scale(1.10);
 }
 
 
@@ -256,6 +283,11 @@ body{
         margin: auto;
         margin-top: 80%;
         font-size: 20px;
+    }
+	
+	
+	.regresar button{
+        width: 50px;
     }
     
 }

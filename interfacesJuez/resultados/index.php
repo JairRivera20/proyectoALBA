@@ -59,7 +59,7 @@ $sqlCliente   = ("SELECT * FROM evento");
 $queryCliente = mysqli_query($conexion, $sqlCliente);
 $cantidad     = mysqli_num_rows($queryCliente);
 
-$altsqlCliente   = ("SELECT cerveza.Id_cerveza, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, cerveza.Nombre AS Cerveza,cerveza.Codigo, usuarios.Nombre AS Usuario, rango_competidor.Nombre AS Rango 
+$altsqlCliente   = ("SELECT cerveza.Id_cerveza, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, cerveza.Codigo, usuarios.Nombre AS Usuario, rango_competidor.Nombre AS Rango 
 FROM cerveza 
 INNER JOIN usuarios ON cerveza.fk_usuario=usuarios.Id_usuario
 INNER JOIN estilos ON cerveza.fk_estilo=estilos.Id_estilo
@@ -76,8 +76,15 @@ include('ModalAceptar.php');
 include('ModalRechazar.php'); 
 
 ?>
+
+	<!-- div para poner el boton de regresar -->
+	<div id="icon" class="regresar">
+		
+	</div>
+	
+	
 <div class="res">
-    <br><br><br>
+    <br><br>
     <div class="tabla">        
         <h4 class="">Resultados || <?=$data->Nombre?></h4>
         
@@ -86,7 +93,7 @@ include('ModalRechazar.php');
             <thead>
                 <tr>
                     <!-- <th scope="col">Id juzgamiento</th> -->
-                    <th scope="col">Nombre de la cerveza</th>
+                    
                     <!-- <th scope="col">Cóodigo de la cerveza</th> -->
                     <th scope="col">Categoría</th>
                     <th scope="col">Estilo</th>
@@ -115,7 +122,7 @@ include('ModalRechazar.php');
                 $alt=$sql->fetch_object();
                 $evento=$alt->Id_evento;
 
-                $sql=$conexion->query("SELECT general.Id, cerveza.Nombre, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
+                $sql=$conexion->query("SELECT general.Id, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
                 FROM evento_usuarios
                 INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
                 INNER JOIN usuarios ON evento_usuarios.fk_usuarios=usuarios.Id_usuario
@@ -130,7 +137,7 @@ include('ModalRechazar.php');
                     <tr>
                         <!-- se debe colocar el nombre de los atributos de la tabla que se mostrarán en la tabla -->
                         <!-- <td><?=$datos->Id?></td> -->
-                        <td><?=$datos->Nombre?></td>
+                        
                         <td><?=$datos->Categoria?></td>
                         <td><?=$datos->Estilo?></td>
                         <!-- <td><?=$datos->Codigo?></td> -->
@@ -178,7 +185,7 @@ include('ModalRechazar.php');
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    
                     
                     
                     <td>
@@ -204,27 +211,6 @@ include('ModalRechazar.php');
             
         </table>
 
-        <div class="boton">
-        <style>
-            .boton button{
-                width: 100px;
-                border: none;
-                outline: none;
-                height: 40px;
-                background: #39A900;
-                color: #fff;
-                font-size: 18px;
-                border-radius: 20px;
-                transition: all 300ms;
-                cursor: pointer;
-            }
-
-            .boton button:hover{
-                transform: scale(1.10);
-            }
-            </style>
-            <a href="../inicioJuez.php"><button type="button" >Regresar</button></a>
-        </div>
     </div>
 </div>
 
@@ -258,27 +244,7 @@ include('ModalRechazar.php');
                 
                 No hay registros disponibles
             </h2>
-            <div class="boton">
-        <style>
-            .boton button{
-                width: 100px;
-                border: none;
-                outline: none;
-                height: 40px;
-                background: #39A900;
-                color: #fff;
-                font-size: 18px;
-                border-radius: 20px;
-                transition: all 300ms;
-                cursor: pointer;
-            }
-
-            .boton button:hover{
-                transform: scale(1.10);
-            }
-        </style>
-            <a href="../inicioJuez.php"><button type="button" >Regresar</button></a>
-        </div>
+            
         </div>
         
     </body>
@@ -329,6 +295,36 @@ $('.btnBorrar').click(function(e){
     });
 
 </script>
+
+
+<!-- para el boton de regresa en esta interfaz -->
+<script>
+// Obtener el elemento div
+var icon = document.getElementById("icon");
+
+// Función para actualizar el icono según el ancho de la pantalla
+function updateIcon() {
+  var screenWidth = window.innerWidth;
+  if (screenWidth <= 760) {
+    icon.innerHTML = "<a href='../index.php'><button name='regresar'><i class='bi bi-arrow-90deg-left'></i></button></a>";
+  } else {
+    icon.innerHTML = "<a href='../index.php'><button name='regresar'><i class='bi bi-arrow-90deg-left'></i> Regresar</button></a>"
+  }
+}
+
+// Ejecutar la función al cargar la página
+updateIcon();
+
+// Ejecutar la función cada vez que cambia el tamaño de la pantalla
+window.addEventListener("resize", function() {
+  updateIcon();
+});
+
+</script>
+
+
+
+<script src="../../js/mensajePestana.js"></script>
 
 
 

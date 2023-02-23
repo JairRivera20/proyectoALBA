@@ -1,66 +1,114 @@
-/* estos es pra llamar el tipo de fuente */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&family=Roboto:wght@100&display=swap');
+/* ----------------------------------------- */
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
+/* ventana modal */
+#btn-modal{
+    display: none;
 }
-
-/* Fondo de la pagina */
-body{
+/* estilo para el contenedor del modal */
+.container-modal{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(109, 106, 52, 0.575), rgba(24, 26, 2, 0.2883)), url("../img/pexels-elevate-1269043-min.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    background: rgba(90, 90, 85, 0.664);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 600;
+}
+/* funcionalidad del modal */
+#btn-modal:checked ~.container-modal{
+    display: flex;
 }
 
-.espacio{
-	padding: 20px;
+/* estilo para el contenido en el modal */
+.content-modal{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: rgb(167, 167, 167);
+    border-radius: 4px;
 }
 
-/* card del login */
-.container{
-    width: 400px;
-    margin: auto;
-    background: rgba(119, 117, 86, 0.418);
-    top: 5%;
-    position: relative;
-    box-sizing: border-box;
-    border-radius: 10px;
-    padding: 50px 30px;
+/* estilo para el h2 */
+.content-modal h2{
+    margin-bottom: 15px;
+}
+/* estilo para el parrafo */
+.content-modal p{
+    padding: 15px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+/* estilo para el contenido del boton cerrar */
+.content-modal .btn-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+/* estilo para el label del boton cerrar */
+.content-modal .btn-cerrar label{
+    width: 140px;
+    padding: 10px;
+    text-align: center;
+    background-color: #00a6ff;
+    color: white;
+    border-radius: 20px;
+    cursor:pointer;
+    transition: all 300ms ease;
 }
 
+.content-modal .btn-cerrar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* estilo para oscurecer el boton con el mouse */
+.content-modal .btn-cerrar label:hover{
+    transform: scale(1.10);
+}
+/* aún no sirve, pero deberia cerrar el modal al dar click fuera */
+.cerrar-modal{
+    width: 100px;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+
+/* style que se le da al editar */
 /* color y tamaño de la letra del menu */
-.container h4{
+.formularioP h4{
     margin: 0;
-    padding: 0 0 20px 0;
+    padding: 0 0 10px 0;
     text-align: center;
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
 }
 
-.container label{
+.formularioP label{
     margin: 0;
     padding: 0;
     color: #fff;
     display: block;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* ajustes de los input */
-.container input{
+.formularioP input{
     width: 100%;
     margin-bottom: 15px;
+    font-size: 14;
 }
 
 /* ajustes de algunos tipos de input */
-.container input[type="text"],
-.container input[type="tel"],
-.container input[type="password"]{
+.formularioP input[type="text"],
+.formularioP input[type="tel"],
+.formularioP input[type="password"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -71,9 +119,10 @@ body{
 }
 
 /* la position del div contraseña sea relativo para asi poder acomodar el ojo de contraseña */
-.container .contraseña{
+.formularioP .contraseña{
     position: relative;
 }
+
 
 /* ajustes del estilo que se le da al icono del ojo en la contraseña */
 .contraseña i{
@@ -84,14 +133,13 @@ body{
     right: 3%;
 }
 
-.container input[type="file"]{
-    height: 40px;
+
+.formularioP input[type="file"]{
     color: white;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-.container input[type="submit"],
-.container input[type="button"]{
+.formularioP input[type="submit"]{
     border: none;
     outline: none;
     height: 40px;
@@ -103,19 +151,19 @@ body{
     cursor: pointer;
 }
 
-.container input[type="submit"]:hover,
-.container input[type="button"]:hover{
+.formularioP input[type="submit"]:hover{
     transform: scale(1.10);
 }
 
+
 /* estilo que se le da al div donde se encunetra a la foto de perfil del usuario */
-.fotoP{
-    width: 200px;
-    height: 200px;
+.fotoPe{
+    width: 90px;
+    height: 90px;
     border-radius: 70%;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -123,23 +171,26 @@ body{
 }
 
 /* tamaño a la que se va a encontrar la foto de perfil del usuario dentro del div principal */
-.fotoP img{
-    width: 105%;
+.fotoPe img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* div donde se encuentra el icono de perfil predeterminado */
-.iconoP{
+.iconoPre{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /* estilo que se le da al icono de perfil predeterminado */
-.iconoP i{
-    font-size: 110px;
+.iconoPre i{
+    font-size: 60px;
     margin-bottom: 20px;
     color: #fff;
 }
+
 
 /* el div con la clase foto para poder mover luego el icono de la "X" */
 .foto{
@@ -150,7 +201,7 @@ body{
 .foto .botonEliminar{
     position: absolute;
     top: 5%;
-    right: 2%;
+    right: 20%;
     background: none;
     border: none;
     cursor: pointer;
@@ -159,21 +210,37 @@ body{
 
 .botonEliminar i{
     color: #fff;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 
+/* bontones del modal de cerrar y cerrar sesion */
+.salir button{
+    width: 140px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: red;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.salir button:hover{
+    transform: scale(1.10);
+}
 
 
-/* ----------------------apartado del responsive----------------------- */
+/* ---------------------esta es la parte responsive------------------ */
 
 @media screen and (max-width: 760px) {
 
-    /* es el primer contenedor donde se encuentra las estadisticas */
-    .container{
-		max-width: 100%;
-        margin-top: 10px;
+    /* modal */
+    .content-modal{
+        width: 90%;
     }
 
-    
+
 }

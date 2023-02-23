@@ -55,7 +55,7 @@ $data=$sql->fetch_object();
 include('modelo/conexion.php');
 
 
-$altsqlCliente   = ("SELECT cerveza.Id_cerveza, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, cerveza.Nombre AS Cerveza,cerveza.Codigo, usuarios.Nombre AS Usuario, rango_competidor.Nombre AS Rango 
+$altsqlCliente   = ("SELECT cerveza.Id_cerveza, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, cerveza.Codigo, usuarios.Nombre AS Usuario, rango_competidor.Nombre AS Rango 
 FROM cerveza 
 INNER JOIN usuarios ON cerveza.fk_usuario=usuarios.Id_usuario
 INNER JOIN estilos ON cerveza.fk_estilo=estilos.Id_estilo
@@ -73,8 +73,15 @@ $altcantidad     = mysqli_num_rows($altqueryCliente);
 include('ModalRechazar.php'); 
 
 ?>
+
+	<!-- div para poner el boton de regresar -->
+	<div id="icon" class="regresar">
+		
+	</div>
+
+
 <div class="res">
-    <br><br><br>
+    <br><br>
     <div class="tabla">        
         <h3 class="">Resultados || <?=$data->Nombre?></h3>
         
@@ -83,7 +90,7 @@ include('ModalRechazar.php');
             <thead>
                 <tr>
                     <!-- <th scope="col">Cóodigo de la cerveza</th> -->
-                    <th scope="col">Nombre de la cerveza</th>
+                   
                     <!-- <th scope="col">Cóodigo de la cerveza</th> -->
                     <th scope="col">Categoría</th>
                     <th scope="col">Estilo</th>
@@ -105,7 +112,7 @@ include('ModalRechazar.php');
                 <?php
                 include "modelo/conexion.php";         
 
-                $sql=$conexion->query("SELECT general.Id, cerveza.Nombre, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
+                $sql=$conexion->query("SELECT general.Id, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
                 FROM evento_usuarios
                 INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
                 INNER JOIN usuarios ON evento_usuarios.fk_usuarios=usuarios.Id_usuario
@@ -120,7 +127,7 @@ include('ModalRechazar.php');
                     <tr>
                         <!-- se debe colocar el nombre de los atributos de la tabla que se mostrarán en la tabla -->
                         <!-- <td><?=$datos->Id?></td> -->
-                        <td><?=$datos->Nombre?></td>
+                        
                         <td><?=$datos->Categoria?></td>
                         <td><?=$datos->Estilo?></td>
                         <!-- <td><?=$datos->Codigo?></td> -->
@@ -158,7 +165,7 @@ include('ModalRechazar.php');
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    
                     <td>
                         Filtro:
                     </td>
@@ -173,27 +180,6 @@ include('ModalRechazar.php');
             
         </table>
 
-        <div class="boton">
-        <style>
-            .boton button{
-                width: 100px;
-                border: none;
-                outline: none;
-                height: 40px;
-                background: #39A900;
-                color: #fff;
-                font-size: 18px;
-                border-radius: 20px;
-                transition: all 300ms;
-                cursor: pointer;
-            }
-
-            .boton button:hover{
-                transform: scale(1.10);
-            }
-            </style>
-            <button type="button" onclick="history.back()" >Regresar</button>
-        </div>
 
     </div>
 </div>
@@ -240,6 +226,9 @@ $('.btnBorrar').click(function(e){
 </script>
 
 
+<script src="../../../js/botonRegresar.js"></script>
+
+<script src="../../../js/mensajePestana.js"></script>
 
 </body>
 </html>

@@ -171,9 +171,10 @@ body{
     color: #fff;
     border: none;
     border-radius: 20px;
-    margin-top: 50px;
     transition: all 300ms;
     cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .boton button:hover{
@@ -233,15 +234,13 @@ label{
 
 /* style que se le dentro del archivo "beer.php" */
 .beer{
-    width: max-content;
+    width: 400px;
     background: rgba(119, 117, 86, 0.445);
     margin: auto;
-    top: 50px;
-    position: relative;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 
@@ -301,60 +300,131 @@ label{
 }
 
 
-/* card del listado de los eventos */
+/* div padre donde se encuetran las mesas */
 .tabla{
-    width: max-content;
-    background: rgba(119, 117, 86, 0.445);
-    margin: 5% auto auto auto;
-    box-sizing: border-box;
-    border-radius: 10px;
-    padding: 30px;
-    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
+    color: #fff;
 }
+
+/* para crear las 2 columnas de las mesas */
+.columna{
+    width: 14%;
+    height: 300px;
+    box-sizing: border-box;
+    margin: 0 1.33% 20px 1.33%;
+    padding: 10px;
+    background: rgba(90, 88, 67, 0.801);
+    border: solid 2px #39A900;
+    border-radius: 30px;
+    overflow-y: scroll;
+}
+
+/* titulo de la mesa */
+.columna h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* tirulo de los jueces que van acatar en las mesas */
+.columna h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* estilo del boton elimiar */
+.columna a{
+    margin: auto;
+}
+
+.columna i{
+    margin-right: 5px;
+}
+
+.columna a button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: red;
+    color: #fff;
+    transition: all 300ms;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.columna a button:hover{
+    transform: scale(1.10);
+}
+
 
 /* ajustes que se le dan a la tabla */
 .tabla table{
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
+    margin-bottom: 30px;
 }
 
-/* color y tamaño de la letra del tabla */
-.tabla h3{
-    margin: 0;
-    padding: 0 0 30px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-}
 
 /* ajustes de la tabla */
 .tabla thead{
     background: #39A900;
+    text-align: center;
 }
 
 .tabla th{
     padding: 5px;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 12px;
 }
 
 .tabla td{
-    margin: 200px;
-    padding: 15px;
+    padding: 5px;
+    font-size: 12px;
 }
 
-/* ajustes del tamaño y color de los iconos que llevan en la tabla */
-.tabla i{
-    font-size: 20px;
-    cursor: pointer;
+
+/* boton regresar */
+.regresar button{
+    width: 130px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
     color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.regresar button:hover{
+    transform: scale(1.10);
 }
 
 
 
 /* ----------------------apartado del responsive----------------------- */
+
+/* para pantallas medianas */
+@media screen and (max-width: 1024px) {
+    
+    /* para crear las 2 columnas de las mesas */
+    .columna{
+        width: 20%;
+        margin: 0 2.5% 20px 2.5%;
+    }
+
+}
+
+
 
 @media screen and (max-width: 760px) {
  
@@ -371,7 +441,6 @@ label{
     }
     
     .table-responsive{
-        overflow-x: scroll;
         margin: 20px;
     }
 
@@ -382,6 +451,24 @@ label{
     .botones button{
         margin: 15px;
         width: 170px;
+    }
+	
+	
+	.regresar button{
+        width: 50px;
+    }
+
+    .beer{
+        max-width: 90%;
+    }
+
+
+    /* para crear las 2 columnas de las mesas */
+    .columna{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        overflow-y: auto ;
     }
     
 }

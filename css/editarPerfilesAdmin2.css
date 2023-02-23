@@ -128,6 +128,7 @@ body{
 
 /* --------------------------listado de eventos--------------------------- */
 
+
 /* card del listado de los eventos */
 .tabla{
     width: max-content;
@@ -183,6 +184,19 @@ body{
 
 /* ----------------------apartado del responsive----------------------- */
 
+/* ----------------------para pantallas medianas----------------------- */
+
+@media screen and (max-width: 1116px) {
+    
+    .table-responsive{
+        overflow-x: scroll;
+        margin: 80px;
+    }
+        
+}
+
+
+
 @media screen and (max-width: 760px) {
     
     /* card del formulario */
@@ -200,6 +214,6 @@ body{
         overflow-x: scroll;
 		margin: 20px;
     }
-    
+	
     
 }

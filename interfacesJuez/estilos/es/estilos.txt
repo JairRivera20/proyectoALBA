@@ -1,4 +1,4 @@
-<div id="hashtag1">
+<div id="hashtag2">
 American Light Lager
 
 Impresión General: Un altamente carbonatado, de cuerpo muy ligero,
@@ -59,7 +59,7 @@ Etiquetas: intensidad de la sesión, color pálido, fermentación baja, lager,
 américa del norte, estilo tradicional, pale-lager-family, equilibrado
 </div>
 
-<div id="hashtag2">
+<div id="hashtag3">
 American Lager 
 Impresión general: muy pálido, altamente carbonatado, ligero.
 Lager con cuerpo y bien atenuada con un perfil de sabor muy neutro.
@@ -123,7 +123,7 @@ lagered, américa del norte, estilo tradicional, pale-lager-family,
 equilibrado
 </div>
 
-<div id="hashtag3">
+<div id="hashtag1">
 Cream Ale 
 Impresión General: Un limpio, bien atenuado, altamente
 Cerveza estadounidense de "cortacésped" carbonatada y sabrosa. Fácilmente

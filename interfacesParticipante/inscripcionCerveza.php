@@ -98,15 +98,24 @@ $filas_2 = mysqli_fetch_all($query_2, MYSQLI_ASSOC);
         var select_codigo = document.getElementById('codigo').value;
         var select_usuario = document.getElementById('usuario').value;
         var select_hijo = document.getElementById('estilos').value;
-        console.log('nombre -> '+select_nombre);
-        console.log('codigo -> '+select_codigo);
-        console.log('usuario -> '+select_usuario);
-        console.log('estilos -> '+select_hijo);
     }
+	function mostrarAlerta() {
+		alert("Mínimo 3 muestras \nMáximo 9 muestras");
+	}
+	function validarMuestras() {
+	  var input = document.getElementById("muestras");
+	  var value = parseInt(input.value);
+
+	  if (value < parseInt(input.getAttribute("min"))) {
+		input.value = input.getAttribute("min");
+	  } else if (value > parseInt(input.getAttribute("max"))) {
+		input.value = input.getAttribute("max");
+	  }
+	}
 </script>
 
 </head>
-
+<body onload="mostrarAlerta()">
     <?php 
         include("menuParticipante.php");
         $sql=$conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 0,1");
@@ -154,7 +163,7 @@ $filas_2 = mysqli_fetch_all($query_2, MYSQLI_ASSOC);
                 </div>
 				<div class="mb-2 col-sm-14">
 					<label>N° muestras</label>
-                    <input type="number" id="muestsras" name="muestras">
+					<input type="number" id="muestras" name="muestras" value="3" min="3" max="9" oninput="validarMuestras()">	
                 </div>				
             </div>
             <!-- -------------------------------------------------------------------------- -->

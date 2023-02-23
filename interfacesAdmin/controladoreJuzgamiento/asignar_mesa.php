@@ -11,6 +11,9 @@ if(isset($_POST['btnasignar'])) {
 
         /* hacemos la consulta para insertar en la tabla de la base de datos */
 		
+		$sql=$conexion->query("SELECT * FROM evento ORDER BY Id_evento DESC LIMIT 0,1");
+		$alt=$sql->fetch_object();
+
 		$a=0;
 		
 		while($a<$user){
@@ -22,11 +25,12 @@ if(isset($_POST['btnasignar'])) {
 			
 				/* insertar datos */
 				$sql=$conexion->query(
-				"INSERT INTO general (Id,fk_cerveza,fk_usuario,Ejemplo,Sin_fallas,Maravilloso,Comentario,Nota,Fallas,Aroma,Apariencia,Sabor,Sensacion,Juzgado,Mesa)
-				VALUES ('','$cer','$cata','','','','','','','','','','',0,$mesa)");
-				
+				"INSERT INTO general (Id,fk_cerveza,fk_usuario,Ejemplo,Sin_fallas,Maravilloso,Comentario,Nota,Fallas,Aroma,Apariencia,Sabor,Sensacion,Juzgado,Mesa,fk_evento)
+				VALUES ('','$cer','$cata','','','','','','','','','','',0,$mesa,($alt->Id_evento))");
+				$sql=$conexion->query("UPDATE cerveza SET Seleccionada=1 WHERE Id_cerveza=$cer");
 				$b++;	
 			}
+			$sql=$conexion->query("UPDATE usuarios SET Seleccionado=1 WHERE Id_usuario=$cata");
 			$a++;
 		}
 		
@@ -34,12 +38,20 @@ if(isset($_POST['btnasignar'])) {
         /* validamos si se registro correctamente */
 
         if ($sql==1) {
-            echo "<div class='alert alert-success'> Asignación satisfactoria </div>";
+            echo "<div style='color: white;
+			padding: 0 0 30px 0;
+			text-align: center;
+			color: #fff;
+			font-size: 20px;'> Asignación satisfactoria </div>";
             
             
             
         } else {
-            echo "<div class='alert alert-danger'>Error 404 </div>";
+            echo "<div style='color: white;
+			padding: 0 0 30px 0;
+			text-align: center;
+			color: #fff;
+			font-size: 20px;''>Error 404 </div>";
             
         };
 

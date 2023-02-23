@@ -87,7 +87,7 @@ $datos=$sql->fetch_object()
               <tbody>
                   <!-- se muestran datos de la tabla y se hace la consulta -->
                   <?php
-                  $sql=$conexion->query("SELECT general.Id, cerveza.Nombre, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
+                  $sql=$conexion->query("SELECT general.Id, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
                   FROM evento_usuarios
                   INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
                   INNER JOIN usuarios ON evento_usuarios.fk_usuarios=usuarios.Id_usuario

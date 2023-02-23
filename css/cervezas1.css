@@ -61,11 +61,31 @@ body{
 /* esto es el apartado html dentro de php pero que se llama la clase para darle el css */
 .noCervezas{
     color: white;
-    margin-top: 20%;
     padding: 0 0 20px 0;
     text-align: center;
     color: #fff;
     font-size: 50px;
+}
+
+
+/* boton del generar un PDF */
+.botonPdf button{
+    width: 130px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #00B400;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+/* efecto de aumento de tamaño del boton */
+.botonPdf button:hover{
+    transform: scale(1.10);
 }
 
 
@@ -78,7 +98,6 @@ body{
     .noCervezas{
         max-width: 90%;
         margin: auto;
-        margin-top: 60%;
         font-size: 25px;
     }
 

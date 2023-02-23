@@ -73,6 +73,12 @@ $altcantidad     = mysqli_num_rows($altqueryCliente);
 include('ModalRechazar.php'); 
 
 ?>
+
+	<!-- div para poner el boton de regresar -->
+	<div id="icon" class="regresar">
+		
+	</div>
+
 <div class="res">
     <br><br><br>
     <div class="tabla">        
@@ -83,7 +89,7 @@ include('ModalRechazar.php');
             <thead>
                 <tr>
                     <!-- <th scope="col">Cóodigo de la cerveza</th> -->
-                    <th scope="col">Nombre de la cerveza</th>
+                    
                     <!-- <th scope="col">Cóodigo de la cerveza</th> -->
                     <th scope="col">Categoría</th>
                     <th scope="col">Estilo</th>
@@ -105,7 +111,7 @@ include('ModalRechazar.php');
                 <?php
                 include "modelo/conexion.php";         
 
-                $sql=$conexion->query("SELECT general.Id, cerveza.Nombre, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
+                $sql=$conexion->query("SELECT general.Id, categorias.Nombre AS Categoria, estilos.Nombre AS Estilo, general.Ejemplo, general.Sin_fallas, general.Maravilloso, general.Comentario, general.Fallas, general.Nota, general.Aroma, general.Apariencia, general.Sabor, general.Sensacion 
                 FROM evento_usuarios
                 INNER JOIN evento ON evento_usuarios.fk_evento=evento.Id_evento
                 INNER JOIN usuarios ON evento_usuarios.fk_usuarios=usuarios.Id_usuario
@@ -158,7 +164,7 @@ include('ModalRechazar.php');
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                   
                     <td>
                         Filtro:
                     </td>
@@ -173,27 +179,6 @@ include('ModalRechazar.php');
             
         </table>
 
-        <div class="boton">
-        <style>
-            .boton button{
-                width: 100px;
-                border: none;
-                outline: none;
-                height: 40px;
-                background: #39A900;
-                color: #fff;
-                font-size: 18px;
-                border-radius: 20px;
-                transition: all 300ms;
-                cursor: pointer;
-            }
-
-            .boton button:hover{
-                transform: scale(1.10);
-            }
-            </style>
-            <button type="button" onclick="history.back()" >Regresar</button>
-        </div>
 
     </div>
 </div>
@@ -238,6 +223,13 @@ $('.btnBorrar').click(function(e){
     });
 
 </script>
+
+
+<!-- para el llamado del boton de regresar -->
+<script src="../../../js/botonRegresar.js"></script>
+
+
+<script src="../../../js/mensajePestana.js"></script>
 
 
 

@@ -69,12 +69,38 @@ table td{
 }
 
 
+/* boton regresar */
+.regresar button{
+    width: 130px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #39A900;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.regresar button:hover{
+    transform: scale(1.10);
+}
+
+
 /*-------------- apartado del responsive ------------------*/
 
 @media screen and (max-width: 760px){
 
     .container{
         max-width: 95%;
+    }
+	
+	
+	.regresar button{
+        width: 50px;
     }
 
     

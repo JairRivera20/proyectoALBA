@@ -22,7 +22,7 @@ body{
 /* card del login */
 .container{
     width: 400px;
-    height: 500px;
+    height: auto;
     background: rgba(119, 117, 86, 0.445);
     top: 50%;
     left: 50%;
@@ -30,16 +30,16 @@ body{
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     border-radius: 10px;
-    padding: 70px 30px;
+    padding: 30px 30px;
 }
 
 /* color y tamaño de la letra del menu */
 .container h4{
     margin: 0;
-    padding: 0 0 20px 0;
+    padding: 0 0 40px 0;
     text-align: center;
     color: #fff;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .container label{
@@ -58,7 +58,8 @@ body{
 
 /* ajustes de algunos tipos de input */
 .container input[type="text"],
-.container input[type="date"]{
+.container input[type="date"],
+.container input[type="number"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -66,6 +67,12 @@ body{
     height: 40px;
     font-size: 16px;
     color: #fff;
+}
+
+/* para quitar las opciones de subir y bajar el valor del numero con las flechas */
+.container input[type="number"]::-webkit-outer-spin-button,
+.container input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
 }
 
 /* es para invertir el color del icono del calendario en la input type date */
@@ -92,6 +99,10 @@ body{
 .container input[type="submit"]:hover,
 .container input[type="button"]:hover{
     transform: scale(1.10);
+}
+
+.container .regresar{
+    margin-bottom: 0;
 }
 
 

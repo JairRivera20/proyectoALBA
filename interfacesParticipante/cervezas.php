@@ -39,7 +39,11 @@ if ($datos!=null) {
     <div>
 	<div class="table-responsive">
 		<div class="container">
-		<table>
+		
+        <?php
+        if ($ok==1) {
+			?>
+			<table>
 			<thead>
 				<tr>
 					<th>Categoria</th>
@@ -49,8 +53,7 @@ if ($datos!=null) {
 				</tr>
 			</thead>
 			<tbody>
-        <?php
-        if ($ok==1) {
+			<?php
             $sql=$conexion->query("SELECT estilos.Nombre AS Estilo,categorias.Nombre AS Categoria,cerveza.Pendiente, cerveza.Codigo
             FROM cerveza
             INNER JOIN estilos ON estilos.Id_estilo=cerveza.Id_cerveza
@@ -75,14 +78,24 @@ if ($datos!=null) {
                             </tr>
                 <?php
             }
+			?>
+			
+			<?php
         }else {
             echo "<div class='noCervezas';>No tienes cervezas registradas</div>";
         }
         ?>
 				</tbody>
 			</table>
+			
+			<div class="botonPdf">
+                <a href="pdf/index.php"><button>Generar pdf</button></a>
+            </div>
+			
 		</div>
+		
 	</div>
+	
     </div>
     
     
